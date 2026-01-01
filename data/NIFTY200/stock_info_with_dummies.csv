@@ -1,0 +1,192 @@
+symbol,company_name,sector,major_sector,SECTOR_CONSUMER,SECTOR_ENERGY,SECTOR_FINANCIAL,SECTOR_MATERIALS,SECTOR_METALS,SECTOR_OTHER,SECTOR_PHARMA,SECTOR_SERVICES
+360ONE,360 ONE WAM LIMITED,Stockbroking & Allied,OTHER,False,False,False,False,False,True,False,False
+ABB,ABB India Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+ABCAPITAL,Aditya Birla Capital Limited,Investment Company,OTHER,False,False,False,False,False,True,False,False
+ACC,ACC Limited,Cement & Cement Products,MATERIALS,False,False,False,True,False,False,False,False
+ADANIENSOL,Adani Energy Solutions Limited,Power Distribution,ENERGY,False,True,False,False,False,False,False,False
+ADANIENT,Adani Enterprises Limited,Trading - Minerals,OTHER,False,False,False,False,False,True,False,False
+ADANIGREEN,Adani Green Energy Limited,Power Generation,ENERGY,False,True,False,False,False,False,False,False
+ADANIPORTS,Adani Ports and Special Economic Zone Limited,Port & Port services,SERVICES,False,False,False,False,False,False,False,True
+ADANIPOWER,Adani Power Limited,Integrated Power Utilities,ENERGY,False,True,False,False,False,False,False,False
+ALKEM,Alkem Laboratories Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+AMBUJACEM,Ambuja Cements Limited,Cement & Cement Products,MATERIALS,False,False,False,True,False,False,False,False
+APLAPOLLO,APL Apollo Tubes Limited,Iron & Steel Products,OTHER,False,False,False,False,False,True,False,False
+APOLLOHOSP,Apollo Hospitals Enterprise Limited,Hospital,OTHER,False,False,False,False,False,True,False,False
+ASHOKLEY,Ashok Leyland Limited,Commercial Vehicles,OTHER,False,False,False,False,False,True,False,False
+ASIANPAINT,Asian Paints Limited,Paints,OTHER,False,False,False,False,False,True,False,False
+ASTRAL,Astral Limited,Plastic Products - Industrial,OTHER,False,False,False,False,False,True,False,False
+ATGL,Adani Total Gas Limited,LPG/CNG/PNG/LNG Supplier,OTHER,False,False,False,False,False,True,False,False
+AUBANK,AU Small Finance Bank Limited,Other Bank,FINANCIAL,False,False,True,False,False,False,False,False
+AUROPHARMA,Aurobindo Pharma Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+AXISBANK,Axis Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+BAJAJ-AUTO,Bajaj Auto Limited,2/3 Wheelers,OTHER,False,False,False,False,False,True,False,False
+BAJAJFINSV,Bajaj Finserv Limited,Holding Company,OTHER,False,False,False,False,False,True,False,False
+BAJAJHLDNG,Bajaj Holdings & Investment Limited,Holding Company,OTHER,False,False,False,False,False,True,False,False
+BAJFINANCE,Bajaj Finance Limited,Non Banking Financial Company (NBFC),FINANCIAL,False,False,True,False,False,False,False,False
+BANKBARODA,Bank of Baroda,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+BANKINDIA,Bank of India,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+BDL,Bharat Dynamics Limited,Aerospace & Defense,OTHER,False,False,False,False,False,True,False,False
+BEL,Bharat Electronics Limited,Aerospace & Defense,OTHER,False,False,False,False,False,True,False,False
+BHARATFORG,Bharat Forge Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+BHARTIARTL,Bharti Airtel Limited,Telecom - Cellular & Fixed line services,SERVICES,False,False,False,False,False,False,False,True
+BHARTIHEXA,Bharti Hexacom Limited,Telecom - Cellular & Fixed line services,SERVICES,False,False,False,False,False,False,False,True
+BHEL,Bharat Heavy Electricals Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+BIOCON,Biocon Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+BLUESTARCO,Blue Star Limited,Household Appliances,OTHER,False,False,False,False,False,True,False,False
+BOSCHLTD,Bosch Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+BPCL,Bharat Petroleum Corporation Limited,Refineries & Marketing,OTHER,False,False,False,False,False,True,False,False
+BRITANNIA,Britannia Industries Limited,Packaged Foods,OTHER,False,False,False,False,False,True,False,False
+BSE,BSE Limited,Exchange and Data Platform,OTHER,False,False,False,False,False,True,False,False
+CANBK,Canara Bank,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+CGPOWER,CG Power and Industrial Solutions Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+CHOLAFIN,Cholamandalam Investment and Finance Company Limited,Non Banking Financial Company (NBFC),FINANCIAL,False,False,True,False,False,False,False,False
+CIPLA,Cipla Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+COALINDIA,Coal India Limited,Coal,OTHER,False,False,False,False,False,True,False,False
+COCHINSHIP,Cochin Shipyard Limited,Ship Building & Allied Services,SERVICES,False,False,False,False,False,False,False,True
+COFORGE,Coforge Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+COLPAL,Colgate Palmolive (India) Limited,Personal Care,OTHER,False,False,False,False,False,True,False,False
+CONCOR,Container Corporation of India Limited,Logistics Solution Provider,OTHER,False,False,False,False,False,True,False,False
+COROMANDEL,Coromandel International Limited,Fertilizers,OTHER,False,False,False,False,False,True,False,False
+CUMMINSIND,Cummins India Limited,Compressors Pumps & Diesel Engines,OTHER,False,False,False,False,False,True,False,False
+DABUR,Dabur India Limited,Personal Care,OTHER,False,False,False,False,False,True,False,False
+DIVISLAB,Divi's Laboratories Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+DIXON,Dixon Technologies (India) Limited,Consumer Electronics,OTHER,False,False,False,False,False,True,False,False
+DLF,DLF Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+DMART,Avenue Supermarts Limited,Diversified Retail,OTHER,False,False,False,False,False,True,False,False
+DRREDDY,Dr. Reddy's Laboratories Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+EICHERMOT,Eicher Motors Limited,2/3 Wheelers,OTHER,False,False,False,False,False,True,False,False
+ETERNAL,ETERNAL LIMITED,E-Retail/ E-Commerce,OTHER,False,False,False,False,False,True,False,False
+EXIDEIND,Exide Industries Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+FEDERALBNK,The Federal Bank  Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+FORTIS,Fortis Healthcare Limited,Hospital,OTHER,False,False,False,False,False,True,False,False
+GAIL,GAIL (India) Limited,Gas Transmission/Marketing,OTHER,False,False,False,False,False,True,False,False
+GLENMARK,Glenmark Pharmaceuticals Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+GMRAIRPORT,GMR AIRPORTS LIMITED,Airport & Airport services,SERVICES,False,False,False,False,False,False,False,True
+GODFRYPHLP,Godfrey Phillips India Limited,Cigarettes & Tobacco Products,OTHER,False,False,False,False,False,True,False,False
+GODREJCP,Godrej Consumer Products Limited,Personal Care,OTHER,False,False,False,False,False,True,False,False
+GODREJPROP,Godrej Properties Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+GRASIM,Grasim Industries Limited,Cement & Cement Products,MATERIALS,False,False,False,True,False,False,False,False
+HAL,Hindustan Aeronautics Limited,Aerospace & Defense,OTHER,False,False,False,False,False,True,False,False
+HAVELLS,Havells India Limited,Consumer Electronics,OTHER,False,False,False,False,False,True,False,False
+HCLTECH,HCL Technologies Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+HDFCAMC,HDFC Asset Management Company Limited,Asset Management Company,OTHER,False,False,False,False,False,True,False,False
+HDFCBANK,HDFC Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+HDFCLIFE,HDFC Life Insurance Company Limited,Life Insurance,OTHER,False,False,False,False,False,True,False,False
+HEROMOTOCO,Hero MotoCorp Limited,2/3 Wheelers,OTHER,False,False,False,False,False,True,False,False
+HINDALCO,Hindalco Industries Limited,Aluminium,OTHER,False,False,False,False,False,True,False,False
+HINDPETRO,Hindustan Petroleum Corporation Limited,Refineries & Marketing,OTHER,False,False,False,False,False,True,False,False
+HINDUNILVR,Hindustan Unilever Limited,Diversified FMCG,CONSUMER,True,False,False,False,False,False,False,False
+HINDZINC,Hindustan Zinc Limited,Zinc,OTHER,False,False,False,False,False,True,False,False
+HUDCO,Housing & Urban Development Corporation Limited,Financial Institution,OTHER,False,False,False,False,False,True,False,False
+ICICIBANK,ICICI Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+ICICIGI,ICICI Lombard General Insurance Company Limited,General Insurance,OTHER,False,False,False,False,False,True,False,False
+IDEA,Vodafone Idea Limited,Telecom - Cellular & Fixed line services,SERVICES,False,False,False,False,False,False,False,True
+IDFCFIRSTB,IDFC First Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+IGL,Indraprastha Gas Limited,LPG/CNG/PNG/LNG Supplier,OTHER,False,False,False,False,False,True,False,False
+INDHOTEL,The Indian Hotels Company Limited,Hotels & Resorts,OTHER,False,False,False,False,False,True,False,False
+INDIANB,Indian Bank,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+INDIGO,InterGlobe Aviation Limited,Airline,OTHER,False,False,False,False,False,True,False,False
+INDUSINDBK,IndusInd Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+INDUSTOWER,Indus Towers Limited,Telecom - Infrastructure,OTHER,False,False,False,False,False,True,False,False
+INFY,Infosys Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+IOC,Indian Oil Corporation Limited,Refineries & Marketing,OTHER,False,False,False,False,False,True,False,False
+IRB,IRB Infrastructure Developers Limited,Civil Construction,OTHER,False,False,False,False,False,True,False,False
+IRCTC,Indian Railway Catering And Tourism Corporation Limited,Tour Travel Related Services,SERVICES,False,False,False,False,False,False,False,True
+IREDA,Indian Renewable Energy Development Agency Limited,Financial Institution,OTHER,False,False,False,False,False,True,False,False
+IRFC,Indian Railway Finance Corporation Limited,Financial Institution,OTHER,False,False,False,False,False,True,False,False
+ITC,ITC Limited,Diversified FMCG,CONSUMER,True,False,False,False,False,False,False,False
+JINDALSTEL,JINDAL STEEL LIMITED,Iron & Steel,OTHER,False,False,False,False,False,True,False,False
+JIOFIN,Jio Financial Services Limited,Investment Company,OTHER,False,False,False,False,False,True,False,False
+JSWENERGY,JSW Energy Limited,Power Generation,ENERGY,False,True,False,False,False,False,False,False
+JSWSTEEL,JSW Steel Limited,Iron & Steel,OTHER,False,False,False,False,False,True,False,False
+JUBLFOOD,Jubilant Foodworks Limited,Restaurants,OTHER,False,False,False,False,False,True,False,False
+KALYANKJIL,Kalyan Jewellers India Limited,Gems Jewellery And Watches,OTHER,False,False,False,False,False,True,False,False
+KEI,KEI Industries Limited,Cables - Electricals,OTHER,False,False,False,False,False,True,False,False
+KOTAKBANK,Kotak Mahindra Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+KPITTECH,KPIT Technologies Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+LICHSGFIN,LIC Housing Finance Limited,Housing Finance Company,FINANCIAL,False,False,True,False,False,False,False,False
+LICI,Life Insurance Corporation Of India,Life Insurance,OTHER,False,False,False,False,False,True,False,False
+LODHA,Lodha Developers Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+LT,Larsen & Toubro Limited,Civil Construction,OTHER,False,False,False,False,False,True,False,False
+LTF,L&T Finance Limited,Investment Company,OTHER,False,False,False,False,False,True,False,False
+LTIM,LTIMindtree Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+LUPIN,Lupin Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+M&M,,,OTHER,False,False,False,False,False,True,False,False
+M&MFIN,,,OTHER,False,False,False,False,False,True,False,False
+MANKIND,Mankind Pharma Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+MARICO,Marico Limited,Edible Oil,OTHER,False,False,False,False,False,True,False,False
+MARUTI,Maruti Suzuki India Limited,Passenger Cars & Utility Vehicles,OTHER,False,False,False,False,False,True,False,False
+MAXHEALTH,Max Healthcare Institute Limited,Hospital,OTHER,False,False,False,False,False,True,False,False
+MAZDOCK,Mazagon Dock Shipbuilders Limited,Ship Building & Allied Services,SERVICES,False,False,False,False,False,False,False,True
+MFSL,Max Financial Services Limited,Life Insurance,OTHER,False,False,False,False,False,True,False,False
+MOTHERSON,Samvardhana Motherson International Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+MOTILALOFS,Motilal Oswal Financial Services Limited,Stockbroking & Allied,OTHER,False,False,False,False,False,True,False,False
+MPHASIS,MphasiS Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+MRF,MRF Limited,Tyres & Rubber Products,OTHER,False,False,False,False,False,True,False,False
+MUTHOOTFIN,Muthoot Finance Limited,Non Banking Financial Company (NBFC),FINANCIAL,False,False,True,False,False,False,False,False
+NATIONALUM,National Aluminium Company Limited,Aluminium,OTHER,False,False,False,False,False,True,False,False
+NAUKRI,Info Edge (India) Limited,Internet & Catalogue Retail,OTHER,False,False,False,False,False,True,False,False
+NESTLEIND,Nestle India Limited,Packaged Foods,OTHER,False,False,False,False,False,True,False,False
+NHPC,NHPC Limited,Power Generation,ENERGY,False,True,False,False,False,False,False,False
+NMDC,NMDC Limited,Industrial Minerals,OTHER,False,False,False,False,False,True,False,False
+NTPC,NTPC Limited,Power Generation,ENERGY,False,True,False,False,False,False,False,False
+NYKAA,FSN E-Commerce Ventures Limited,E-Retail/ E-Commerce,OTHER,False,False,False,False,False,True,False,False
+OBEROIRLTY,Oberoi Realty Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+OFSS,Oracle Financial Services Software Limited,Software Products,OTHER,False,False,False,False,False,True,False,False
+OIL,Oil India Limited,Oil Exploration & Production,OTHER,False,False,False,False,False,True,False,False
+ONGC,Oil & Natural Gas Corporation Limited,Oil Exploration & Production,OTHER,False,False,False,False,False,True,False,False
+PAGEIND,Page Industries Limited,Garments & Apparels,OTHER,False,False,False,False,False,True,False,False
+PATANJALI,Patanjali Foods Limited,Edible Oil,OTHER,False,False,False,False,False,True,False,False
+PAYTM,One 97 Communications Limited,Financial Technology (Fintech),OTHER,False,False,False,False,False,True,False,False
+PERSISTENT,Persistent Systems Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+PFC,Power Finance Corporation Limited,Financial Institution,OTHER,False,False,False,False,False,True,False,False
+PHOENIXLTD,The Phoenix Mills Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+PIDILITIND,Pidilite Industries Limited,Specialty Chemicals,MATERIALS,False,False,False,True,False,False,False,False
+PIIND,PI Industries Limited,Pesticides & Agrochemicals,MATERIALS,False,False,False,True,False,False,False,False
+PNB,Punjab National Bank,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+POLICYBZR,PB Fintech Limited,Financial Technology (Fintech),OTHER,False,False,False,False,False,True,False,False
+POLYCAB,Polycab India Limited,Cables - Electricals,OTHER,False,False,False,False,False,True,False,False
+POWERGRID,Power Grid Corporation of India Limited,Power - Transmission,ENERGY,False,True,False,False,False,False,False,False
+POWERINDIA,Hitachi Energy India Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+PRESTIGE,Prestige Estates Projects Limited,Residential Commercial Projects,OTHER,False,False,False,False,False,True,False,False
+RECLTD,REC Limited,Financial Institution,OTHER,False,False,False,False,False,True,False,False
+RELIANCE,Reliance Industries Limited,Refineries & Marketing,OTHER,False,False,False,False,False,True,False,False
+RVNL,Rail Vikas Nigam Limited,Civil Construction,OTHER,False,False,False,False,False,True,False,False
+SAIL,Steel Authority of India Limited,Iron & Steel,OTHER,False,False,False,False,False,True,False,False
+SBICARD,SBI Cards and Payment Services Limited,Non Banking Financial Company (NBFC),FINANCIAL,False,False,True,False,False,False,False,False
+SBILIFE,SBI Life Insurance Company Limited,Life Insurance,OTHER,False,False,False,False,False,True,False,False
+SBIN,State Bank of India,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+SHREECEM,SHREE CEMENT LIMITED,Cement & Cement Products,MATERIALS,False,False,False,True,False,False,False,False
+SHRIRAMFIN,Shriram Finance Limited,Non Banking Financial Company (NBFC),FINANCIAL,False,False,True,False,False,False,False,False
+SIEMENS,Siemens Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+SOLARINDS,Solar Industries India Limited,Explosives,OTHER,False,False,False,False,False,True,False,False
+SONACOMS,Sona BLW Precision Forgings Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+SRF,SRF Limited,Specialty Chemicals,MATERIALS,False,False,False,True,False,False,False,False
+SUNPHARMA,Sun Pharmaceutical Industries Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+SUPREMEIND,Supreme Industries Limited,Plastic Products - Industrial,OTHER,False,False,False,False,False,True,False,False
+SUZLON,Suzlon Energy Limited,Heavy Electrical Equipment,OTHER,False,False,False,False,False,True,False,False
+TATACOMM,Tata Communications Limited,Telecom - Cellular & Fixed line services,SERVICES,False,False,False,False,False,False,False,True
+TATACONSUM,TATA CONSUMER PRODUCTS LIMITED,Tea & Coffee,OTHER,False,False,False,False,False,True,False,False
+TATAELXSI,Tata Elxsi Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+TATAPOWER,Tata Power Company Limited,Integrated Power Utilities,ENERGY,False,True,False,False,False,False,False,False
+TATASTEEL,Tata Steel Limited,Iron & Steel,OTHER,False,False,False,False,False,True,False,False
+TATATECH,Tata Technologies Limited,IT Enabled Services,SERVICES,False,False,False,False,False,False,False,True
+TCS,Tata Consultancy Services Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+TECHM,Tech Mahindra Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+TIINDIA,Tube Investments of India Limited,Auto Components & Equipments,OTHER,False,False,False,False,False,True,False,False
+TITAN,Titan Company Limited,Gems Jewellery And Watches,OTHER,False,False,False,False,False,True,False,False
+TMPV,Tata Motors Passenger Vehicles Limited,Passenger Cars & Utility Vehicles,OTHER,False,False,False,False,False,True,False,False
+TORNTPHARM,Torrent Pharmaceuticals Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False
+TORNTPOWER,Torrent Power Limited,Integrated Power Utilities,ENERGY,False,True,False,False,False,False,False,False
+TRENT,Trent Limited,Speciality Retail,OTHER,False,False,False,False,False,True,False,False
+TVSMOTOR,TVS Motor Company Limited,2/3 Wheelers,OTHER,False,False,False,False,False,True,False,False
+ULTRACEMCO,UltraTech Cement Limited,Cement & Cement Products,MATERIALS,False,False,False,True,False,False,False,False
+UNIONBANK,Union Bank of India,Public Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+UNITDSPR,United Spirits Limited,Breweries & Distilleries,OTHER,False,False,False,False,False,True,False,False
+UPL,UPL Limited,Pesticides & Agrochemicals,MATERIALS,False,False,False,True,False,False,False,False
+VBL,Varun Beverages Limited,Other Beverages,OTHER,False,False,False,False,False,True,False,False
+VEDL,Vedanta Limited,Diversified Metals,METALS,False,False,False,False,True,False,False,False
+VOLTAS,Voltas Limited,Household Appliances,OTHER,False,False,False,False,False,True,False,False
+WIPRO,Wipro Limited,Computers - Software & Consulting,OTHER,False,False,False,False,False,True,False,False
+YESBANK,Yes Bank Limited,Private Sector Bank,FINANCIAL,False,False,True,False,False,False,False,False
+ZYDUSLIFE,Zydus Lifesciences Limited,Pharmaceuticals,PHARMA,False,False,False,False,False,False,True,False

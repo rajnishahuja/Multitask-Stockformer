@@ -1,0 +1,48 @@
+================================================================================
+NIFTY-200 DATA QUALITY REPORT
+================================================================================
+Generated: 2026-01-01 18:16:49
+Date Range: 2022-01-01 to 2024-08-31
+
+DOWNLOAD SUMMARY
+--------------------------------------------------------------------------------
+Total stocks attempted: 200
+Successfully downloaded: 191
+Failed downloads: 9
+Success rate: 95.5%
+
+FAILED DOWNLOADS
+--------------------------------------------------------------------------------
+  - BAJAJHFL (likely recent IPO or delisted)
+  - ENRIN (likely recent IPO or delisted)
+  - HYUNDAI (likely recent IPO or delisted)
+  - ITCHOTELS (likely recent IPO or delisted)
+  - NTPCGREEN (likely recent IPO or delisted)
+  - PREMIERENE (likely recent IPO or delisted)
+  - SWIGGY (likely recent IPO or delisted)
+  - VMM (likely recent IPO or delisted)
+  - WAAREEENER (likely recent IPO or delisted)
+
+VALIDATION RESULTS
+--------------------------------------------------------------------------------
+PASS: 191 stocks
+WARN: 0 stocks
+FAIL: 0 stocks
+
+CORPORATE ACTION VERIFICATION
+--------------------------------------------------------------------------------
+Checked for unadjusted splits/bonuses (>40% drops or >50% jumps)
+Suspicious gaps found: 1 (NMDC - verified as correct 1:2 bonus adjustment)
+Verdict: ✅ All data properly adjusted by Zerodha
+
+FINAL UNIVERSE
+--------------------------------------------------------------------------------
+Stocks in final universe: 191
+Saved to: data/NIFTY200/instruments/nifty200.txt
+Raw data location: data/NIFTY200/raw/
+
+NEXT STEPS
+--------------------------------------------------------------------------------
+1. Fetch market capitalization data (Task 2.3)
+2. Create sector classification mapping (Task 2.3)
+3. Proceed to Phase 3 - Alpha158 factor construction
