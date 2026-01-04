@@ -1,0 +1,109 @@
+[INFO] 
+================================================================================
+[INFO] 1. LOADING STOCK CODES AND DATE RANGE
+[INFO] ================================================================================
+[INFO] ✓ Loaded 191 stock codes from stock info file
+[INFO]   First 5: ['360ONE', 'ABB', 'ABCAPITAL', 'ACC', 'ADANIENSOL']
+[INFO]   Last 5: ['VEDL', 'VOLTAS', 'WIPRO', 'YESBANK', 'ZYDUSLIFE']
+[INFO] ✓ Config loaded: T1=20, T2=2, train_ratio=0.75, val_ratio=0.125
+[INFO] ✓ Date range calculated:
+[INFO]   Total days: 660
+[INFO]   Train days: 495
+[INFO]   Val days: 82
+[INFO]   Test days: 83
+[INFO]   Prediction days (from T1=20): 640
+[INFO]   Test period: 2024-05-03 to 2024-08-30
+[INFO] 
+================================================================================
+[INFO] 2. VALIDATING MODEL PREDICTIONS
+[INFO] ================================================================================
+[INFO] ✓ Loaded predictions: (61, 185)
+[INFO]   Stocks: 61
+[INFO]   Time steps: 185
+[INFO]   Extracted test predictions: 61 stocks × 83 days
+[INFO]   Stock codes: ['360ONE', 'ABB', 'ABCAPITAL']...
+[INFO]   Date range: 2024-05-03 to 2024-08-30
+[INFO] ✓ No NaN values in predictions
+[INFO] 
+Prediction Statistics:
+[INFO]   Mean:   0.003466
+[INFO]   Std:    0.002961
+[INFO]   Min:    -0.006776
+[INFO]   Max:    0.014561
+[INFO]   Range:  0.021337
+[INFO] 
+================================================================================
+[INFO] 3. VALIDATING ACTUAL RETURNS (LABELS)
+[INFO] ================================================================================
+[INFO] ✓ Loaded labels: (61, 185)
+[INFO] ✓ Shapes match
+[INFO] ✓ No NaN values in labels
+[INFO] 
+Actual Return Statistics:
+[INFO]   Mean:   0.002236
+[INFO]   Std:    0.025210
+[INFO]   Min:    -0.251944
+[INFO]   Max:    0.192311
+[INFO]   Range:  0.444255
+[INFO] 
+================================================================================
+[INFO] 4. VALIDATING STOCK PRICE DATA
+[INFO] ================================================================================
+[INFO] Total stocks in predictions: 61
+[INFO] ✓ Price files found: 61/61
+[INFO] 
+Validating price data structure (sampling 5 stocks)...
+[INFO]   ✓ 360ONE: 660 rows, date range: 2022-01-03 to 2024-08-30
+[INFO]     Coverage: 83/83 test dates (100.0%)
+[INFO]   ✓ ABB: 660 rows, date range: 2022-01-03 to 2024-08-30
+[INFO]     Coverage: 83/83 test dates (100.0%)
+[INFO]   ✓ ABCAPITAL: 660 rows, date range: 2022-01-03 to 2024-08-30
+[INFO]     Coverage: 83/83 test dates (100.0%)
+[INFO]   ✓ ACC: 660 rows, date range: 2022-01-03 to 2024-08-30
+[INFO]     Coverage: 83/83 test dates (100.0%)
+[INFO]   ✓ ADANIENSOL: 660 rows, date range: 2022-01-03 to 2024-08-30
+[INFO]     Coverage: 83/83 test dates (100.0%)
+[INFO] 
+================================================================================
+[INFO] 4. CHECKING DATE ALIGNMENT
+[INFO] ================================================================================
+[INFO] Test period dates: 83
+[INFO]   First date: 2024-05-03
+[INFO]   Last date:  2024-08-30
+[INFO] ✓ Date format valid (can convert to datetime)
+[INFO] ✓ No major gaps in date sequence
+[INFO] ✓ No major gaps in date sequence
+[INFO] 
+================================================================================
+[INFO] 5. CHECKING BENCHMARK DATA AVAILABILITY
+[INFO] ================================================================================
+[WARNING] ⚠ No benchmark data found - will need to fetch or skip benchmark comparison
+[INFO]   Expected locations:
+[INFO]     data/NIFTY200/benchmark/NIFTY50_TRI.csv
+[INFO]     data/NIFTY200/benchmark/NIFTY50.csv
+[INFO] 
+================================================================================
+[INFO] 6. DATA QUALITY SUMMARY
+[INFO] ================================================================================
+[INFO] 
+Data Completeness:
+[INFO]   Predictions coverage: 100.00%
+[INFO]   Price data coverage:  100.00%
+[INFO] 
+Ranking Quality (from previous analysis):
+[INFO]   Mean IC:      0.0308
+[INFO]   Mean Rank IC: 0.0123
+[INFO]   IC > 0:       152/255 (59.6%)
+[INFO] 
+================================================================================
+[INFO] 7. BACKTEST READINESS ASSESSMENT
+[INFO] ================================================================================
+[INFO] 
+✅ NO CRITICAL ISSUES
+[INFO] 
+⚠ WARNINGS:
+[WARNING]   • Benchmark data not found (comparison limited)
+[INFO] 
+================================================================================
+[INFO] ✅ DATA VALIDATION COMPLETE - READY FOR BACKTEST
+[INFO] ================================================================================

@@ -47,6 +47,7 @@ parser.add_argument('--traffic_file', default=config['file']['traffic'])
 parser.add_argument('--indicator_file', default=config['file']['indicator'])
 parser.add_argument('--adj_file', default=config['file']['adj'])
 parser.add_argument('--adjgat_file', default=config['file']['adjgat'])
+parser.add_argument('--factor_dir', default=config['file'].get('factor_dir', ''))
 
 args = parser.parse_args()
 

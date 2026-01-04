@@ -17,18 +17,18 @@ from Stockformermodel.Multitask_Stockformer_models import Stockformer
 import os
 from torch.utils.tensorboard import SummaryWriter
 
-# 初始化解析器
+# Initialize argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument("--config", type=str, help='configuration file')
 
-# 首次解析，仅获取config文件
-args, unknown = parser.parse_known_args()  # 使用known_args来避免与后续添加的参数冲突
+# First parse to get config file only
+args, unknown = parser.parse_known_args()  # Use known_args to avoid conflicts with subsequent parameters
 
-# 读取配置文件
+# Read configuration file
 config = configparser.ConfigParser()
 config.read(args.config)
 
-# 添加其它配置参数
+# Add other configuration parameters
 parser.add_argument('--cuda', type=str, default=config['train']['cuda'])
 parser.add_argument('--seed', type=int, default=config['train']['seed'])
 parser.add_argument('--batch_size', type=int, default=config['train']['batch_size'])
@@ -53,13 +53,14 @@ parser.add_argument('--traffic_file', default=config['file']['traffic'])
 parser.add_argument('--indicator_file', default=config['file']['indicator'])
 parser.add_argument('--adj_file', default=config['file']['adj'])
 parser.add_argument('--adjgat_file', default=config['file']['adjgat'])
+parser.add_argument('--factor_dir', default=config['file']['factor_dir'])
 parser.add_argument('--model_file', default=config['file']['model'])
 parser.add_argument('--log_file', default=config['file']['log'])
 
-# 最终解析参数
+# Final argument parsing
 args = parser.parse_args()
 
-# 检查并创建日志文件目录
+# Check and create log file directory
 log_directory = os.path.dirname(args.log_file)
 if not os.path.exists(log_directory):
     os.makedirs(log_directory)
@@ -67,25 +68,26 @@ if not os.path.exists(log_directory):
     
 log = open(args.log_file, 'w')
 
-# 检查并创建模型文件目录
+# Check and create model file directory
 model_directory = os.path.dirname(args.model_file)
 if not os.path.exists(model_directory):
     os.makedirs(model_directory)
     print(f"Directory created for model file: {model_directory}")
 
 
-# # 现在安全地打开日志文件写入
+# # Now safely open log file for writing
 # with open(args.log_file, 'w') as log:
 #     log.write("Logging has started.\n")
 # print(f"Log file is ready to write at {args.log_file}")
 
-# 确认模型文件路径准备就绪（这里仅确认路径，不创建文件）
+# Confirm model file path is ready (only confirm path, don't create file)
 print(f"Model file path is ready at {args.model_file}")
 
 
 device = torch.device(f"cuda:{args.cuda}" if torch.cuda.is_available() else "cpu")
 
-tensorboard_folder = '/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/runs/Multitask_Stockformer/Stock_CN_2021-06-04_2024-01-30'
+# Dynamic TensorBoard path based on dataset name
+tensorboard_folder = f'./runs/Multitask_Stockformer/{args.Dataset}_Alpha158_MVP'
 
 # Check and create the main TensorBoard folder
 if not os.path.exists(tensorboard_folder):
@@ -237,13 +239,18 @@ def test_res(model, valXL, valXH, valXC, bonus_valX, valTE, valY, valYC, adjgat)
     avg_mape = np.mean(mapes)
     log_string(log, 'average, acc: %.4f, mae: %.4f, rmse: %.4f, mape: %.4f' % (avg_acc, avg_mae, avg_rmse, avg_mape))
     
-    # 保存分类任务的最后一个时间步的预测和标签
-    save_to_csv('/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/output/Multitask_output_2021-06-04_2024-01-30/classification/classification_pred_last_step.csv', pred_class[:, -1, :])
-    save_to_csv('/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/output/Multitask_output_2021-06-04_2024-01-30/classification/classification_label_last_step.csv', label_class[:, -1])
+    # Dynamic output paths based on dataset name
+    output_dir = f'./output/Multitask_output_{args.Dataset}_Alpha158_MVP'
+    os.makedirs(f'{output_dir}/classification', exist_ok=True)
+    os.makedirs(f'{output_dir}/regression', exist_ok=True)
+    
+    # Save classification predictions and labels for the last time step
+    save_to_csv(f'{output_dir}/classification/classification_pred_last_step.csv', pred_class[:, -1, :])
+    save_to_csv(f'{output_dir}/classification/classification_label_last_step.csv', label_class[:, -1])
 
-    # 保存回归任务的最后一个时间步的预测和标签
-    save_to_csv('/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/output/Multitask_output_2021-06-04_2024-01-30/regression/regression_pred_last_step.csv', pred_regress[:, -1, :])
-    save_to_csv('/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/output/Multitask_output_2021-06-04_2024-01-30/regression/regression_label_last_step.csv', label_regress[:, -1])
+    # Save regression predictions and labels for the last time step
+    save_to_csv(f'{output_dir}/regression/regression_pred_last_step.csv', pred_regress[:, -1, :])
+    save_to_csv(f'{output_dir}/regression/regression_label_last_step.csv', label_regress[:, -1])
 
     return avg_acc, avg_mae, avg_rmse, avg_mape
 
@@ -251,6 +258,9 @@ def train(model, trainXL, trainXH, trainXC, bonus_trainX, trainTE, trainY, train
     num_train = trainXL.shape[0]
     # best_composite_score = 0.5
     best_mae = float('inf')
+    early_stop_patience = 30  # Standard patience for baseline
+    epochs_no_improve = 0
+    
     optimizer = torch.optim.Adam(model.parameters(),
                                      lr=args.learning_rate)
     lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=20,    
@@ -303,10 +313,8 @@ def train(model, trainXL, trainXH, trainXC, bonus_trainX, trainTE, trainY, train
                 # w1 = weight_regress / weights_sum
                 # w2 = weight_class / weights_sum
 
-                # 应用权重到损失函数
-                # loss = w1*loss_regress + w2*loss_class
+                # Baseline: Equal weighting for both tasks
                 loss = loss_regress + loss_class
-
 
                 loss.backward()
                 
@@ -337,18 +345,27 @@ def train(model, trainXL, trainXH, trainXC, bonus_trainX, trainTE, trainY, train
         #     log_string(log, f'Epoch {epoch}: New best accuracy: {best_composite_score:.4f}, Model saved.')
         
         
-        # 假设你的 res 函数返回准确率（acc），MAE，RMSE 和 MAPE
+        # Assuming res function returns accuracy (acc), MAE, RMSE and MAPE
         acc, mae, rmse, mape = res(model, valXL, valXH, valXC, bonus_valX, valTE, valY, valYC, adjgat, epoch, log, tensor_writer)
         
-        # 使用 MAE 作为学习率调度器的度量
-        lr_scheduler.step(mae)  # 传递 mae 而不是 acc
+        # Use MAE as the metric for learning rate scheduler
+        lr_scheduler.step(mae)  # Pass mae instead of acc
 
-        # 检查是否得到了更低的 MAE，这意味着模型的表现更好了
-        if mae < best_mae:  # 寻找最小 MAE
-            best_mae = mae  # 更新最佳 MAE 记录
-            # 保存具有最佳 mae 的模型状态
+        # Check if we got lower MAE, which means the model performs better
+        if mae < best_mae:  # Looking for minimum MAE
+            best_mae = mae  # Update best MAE record
+            epochs_no_improve = 0  # Reset counter
+            # Save model state with best mae
             torch.save(model.state_dict(), args.model_file)
             log_string(log, f'Epoch {epoch}: New best mae: {best_mae:.4f}, Model saved.')
+        else:
+            epochs_no_improve += 1
+            log_string(log, f'Epoch {epoch}: No improvement for {epochs_no_improve} epochs (best mae: {best_mae:.4f})')
+        
+        # Early stopping check
+        if epochs_no_improve >= early_stop_patience:
+            log_string(log, f'Early stopping triggered after {epoch} epochs (no improvement for {early_stop_patience} epochs)')
+            break
 
 
 def test(model, valXL, valXH, valXC, bonus_valX, valTE, valY, valYC, adjgat):

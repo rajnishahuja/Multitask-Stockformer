@@ -1,0 +1,12 @@
+{
+  "strategy_name": "NIFTY-50 Benchmark",
+  "ticker": "^NSEI",
+  "initial_capital": 1000000,
+  "final_value": 1105956.0022541552,
+  "total_return": 0.10595600225415523,
+  "annualized_return": 0.5265075965803643,
+  "sharpe_ratio": 2.43095262373807,
+  "max_drawdown": -0.05929359941641067,
+  "win_rate": 0.5833333333333334,
+  "trading_days": 60
+}

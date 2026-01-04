@@ -1,0 +1,47 @@
+[
+  {
+    "strategy_name": "Daily Rebalancing",
+    "rebalance_frequency": 1,
+    "initial_capital": 1000000,
+    "final_value": 996811.1899800007,
+    "total_return": -0.003188810019999277,
+    "annualized_return": -0.013107827500469349,
+    "sharpe_ratio": 0.13298128304325593,
+    "max_drawdown": -0.11023646555431724,
+    "win_rate": 0.5245901639344263,
+    "total_trades": 1023,
+    "rebalance_count": 61,
+    "transaction_costs": 183253.18001999997,
+    "trading_days": 61
+  },
+  {
+    "strategy_name": "Weekly Rebalancing",
+    "rebalance_frequency": 5,
+    "initial_capital": 1000000,
+    "final_value": 1119212.7058199993,
+    "total_return": 0.11921270581999933,
+    "annualized_return": 0.5924481428162078,
+    "sharpe_ratio": 2.273821870295473,
+    "max_drawdown": -0.07018577441263134,
+    "win_rate": 0.6065573770491803,
+    "total_trades": 239,
+    "rebalance_count": 13,
+    "transaction_costs": 48606.23418000001,
+    "trading_days": 61
+  },
+  {
+    "strategy_name": "Monthly Rebalancing",
+    "rebalance_frequency": 20,
+    "initial_capital": 1000000,
+    "final_value": 1091924.0089000002,
+    "total_return": 0.09192400890000024,
+    "annualized_return": 0.43806495310282867,
+    "sharpe_ratio": 1.8768974430137495,
+    "max_drawdown": -0.07930944306684143,
+    "win_rate": 0.6229508196721312,
+    "total_trades": 67,
+    "rebalance_count": 4,
+    "transaction_costs": 13105.311099999999,
+    "trading_days": 61
+  }
+]

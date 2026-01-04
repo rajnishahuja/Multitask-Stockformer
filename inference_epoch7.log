@@ -1,0 +1,25 @@
+Using device: cpu
+======================================================================
+STOCKFORMER INFERENCE SCRIPT
+======================================================================
+
+Configuration:
+  Dataset: NIFTY200
+  Model path: cpt/STOCK/saved_model_Multitask_2020-12-02_2023-08-02/epoch_7.pth
+  Output directory: output/Improved_epoch7/
+
+======================================================================
+LOADING DATA
+======================================================================
+Factor data loaded: (660, 185, 22) with no NaN values.
+Test set loaded:
+  Samples: 61
+  Time steps (T1): 20
+  Stocks: 185
+  Features: 24
+  Graph embeddings: torch.Size([185, 128])
+
+======================================================================
+LOADING MODEL
+======================================================================
+ERROR: Model file not found: cpt/STOCK/saved_model_Multitask_2020-12-02_2023-08-02/epoch_7.pth

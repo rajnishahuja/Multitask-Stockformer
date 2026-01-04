@@ -20,23 +20,34 @@ def log_string(log, string):
 
 def metric(reg_pred, reg_label, class_pred, class_label):
     with np.errstate(divide='ignore', invalid='ignore'):
-        # 回归任务的度量计算
-        mask = np.not_equal(reg_label, 0)
+        # Regression metrics calculation
+        # Don't mask zero returns - they are valid! Only mask NaN/Inf if present
+        mask = ~(np.isnan(reg_label) | np.isinf(reg_label))
         mask = mask.astype(np.float32)
-        mask /= np.mean(mask)
-        mae = np.abs(np.subtract(reg_pred, reg_label)).astype(np.float32)
-        wape = np.divide(np.sum(mae), np.sum(reg_label))
-        wape = np.nan_to_num(wape * mask)
-        rmse = np.square(mae)
-        mape = np.divide(mae, reg_label)
-        mae = np.nan_to_num(mae * mask)
-        mae = np.mean(mae)
-        rmse = np.nan_to_num(rmse * mask)
-        rmse = np.sqrt(np.mean(rmse))
-        mape = np.nan_to_num(mape * mask)
-        mape = np.mean(mape)
         
-        # 分类任务的准确率计算
+        # Avoid division by zero in mask normalization
+        mask_mean = np.mean(mask)
+        if mask_mean > 0:
+            mask /= mask_mean
+        
+        mae = np.abs(np.subtract(reg_pred, reg_label)).astype(np.float32)
+        mae = mae * mask
+        mae = np.nan_to_num(mae)
+        mae = np.mean(mae)
+        
+        rmse = np.square(np.subtract(reg_pred, reg_label)).astype(np.float32)
+        rmse = rmse * mask
+        rmse = np.nan_to_num(rmse)
+        rmse = np.sqrt(np.mean(rmse))
+        
+        # MAPE: avoid division by near-zero labels
+        mape_mask = mask * (np.abs(reg_label) > 1e-8)
+        mape = np.divide(mae, np.abs(reg_label) + 1e-10)
+        mape = mape * mape_mask
+        mape = np.nan_to_num(mape)
+        mape = np.mean(mape) if np.sum(mape_mask) > 0 else 0.0
+        
+        # Classification accuracy
         pred_classes = np.argmax(class_pred, axis=-1)
         correct = (pred_classes == class_label).astype(np.float32)
         acc = np.mean(correct)
@@ -58,15 +69,24 @@ def _compute_class_loss(y_true, y_predicted):
 
 
 def _compute_regression_loss(y_true, y_predicted):
-    return masked_mae(y_predicted, y_true, 0.0)
+    # Use NaN as null value, not 0.0 (zero returns are valid!)
+    return masked_mae(y_predicted, y_true, np.nan)
 
 def masked_mae(preds, labels, null_val=np.nan):
+    # Only mask NaN/Inf values, not zeros (zeros are valid returns!)
     if np.isnan(null_val):
-        mask = ~torch.isnan(labels)
+        mask = ~(torch.isnan(labels) | torch.isinf(labels))
     else:
         mask = (labels!=null_val)
     mask = mask.float()
-    mask /=  torch.mean((mask))
+    
+    # Avoid division by zero
+    mask_mean = torch.mean(mask)
+    if mask_mean > 0:
+        mask = mask / mask_mean
+    else:
+        mask = torch.zeros_like(mask)
+    
     mask = torch.where(torch.isnan(mask), torch.zeros_like(mask), mask)
     loss = torch.abs(preds-labels)
     loss = loss * mask
@@ -105,20 +125,43 @@ def generate_temporal_embeddings(num_step, args):
 class StockDataset(Dataset):
     def __init__(self, args, mode='train'):
         self.mode = mode
-        # Load data
-        Traffic = np.load(args.traffic_file)['result']
-        indicator = np.load(args.indicator_file)['result']
-        # path = '/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/data/Stock_CN_2021-02-01_2023-12-29_Alpha_360/Alpha_360_2021-02-01_2023-12-29'
-        path = '/root/autodl-tmp/Stockformer/Stockformer_run/Stockformer_code/data/Stock_CN_2021-06-04_2024-01-30/Alpha_360_2021-06-04_2024-01-30'
-        files = os.listdir(path)
+        # Load flow data (dual-frequency or single)
+        traffic_data = np.load(args.traffic_file)
+        Traffic = traffic_data['low_freq'] if 'low_freq' in traffic_data else traffic_data['result']
+        # Load trend indicator
+        indicator_data = np.load(args.indicator_file)
+        indicator = indicator_data['trend'] if 'trend' in indicator_data else indicator_data['result']
+        
+        # Load factor CSVs from config-specified directory
+        # Original: hardcoded path to Alpha_360 factors (360 features)
+        # Adapted: dynamic path from config for Alpha_158 factors (22 features for NIFTY-200)
+        path = args.factor_dir
+        files = [f for f in os.listdir(path) if f.endswith('.csv') and 'ic_summary' not in f.lower()]
+        
+        # Load first file to get expected shape
+        first_df = pd.read_csv(os.path.join(path, files[0]), index_col=0)
+        expected_rows = first_df.shape[0]
+        
+        # Only load files with matching row count (filters out partial-period factors)
         data_list = []
         for file in files:
             file_path = os.path.join(path, file)
             df = pd.read_csv(file_path, index_col=0)
-            arr = np.expand_dims(df.values, axis=2)
-            data_list.append(arr)
+            if df.shape[0] == expected_rows:
+                # Handle NaN values: forward-fill within each column, then zero-fill remaining
+                # This preserves temporal patterns while avoiding NaN propagation
+                df_filled = df.ffill().fillna(0)
+                arr = np.expand_dims(df_filled.values, axis=2)
+                data_list.append(arr)
         concatenated_arr = np.concatenate(data_list, axis=2)
         bonus_all = concatenated_arr
+        
+        # Verify no NaN in bonus_all
+        nan_count = np.isnan(bonus_all).sum()
+        if nan_count > 0:
+            print(f"WARNING: After imputation, bonus_all still has {nan_count} NaN values!")
+        else:
+            print(f"Factor data loaded: {bonus_all.shape} with no NaN values.")
         num_step = Traffic.shape[0]
         train_steps = round(args.train_ratio * num_step)
         test_steps = round(args.test_ratio * num_step)
@@ -141,8 +184,12 @@ class StockDataset(Dataset):
         self.bonus_X, self.bonus_Y = self.bonus_seq2instance(self.bonus_all, args.T1, args.T2)
         self.TE = self.seq2instance(self.TE, args.T1, args.T2)
         self.TE = np.concatenate(self.TE, axis=1).astype(np.int32)
-        # Adding the infea attribute based on bonus_all
-        self.infea = bonus_all.shape[-1] + 2  # Last dimension of bonus_all plus one
+        
+        # Calculate input feature dimension dynamically
+        # bonus_all.shape[-1] = number of factor CSVs loaded (22 for NIFTY-200 Alpha158)
+        # +2 for temporal embeddings (day-of-week, time-of-day)
+        # Result: infea = 24 for NIFTY-200 (vs 362 for original Chinese CSI-300)
+        self.infea = bonus_all.shape[-1] + 2
 
     def __getitem__(self, index):
         return {

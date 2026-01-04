@@ -1,0 +1,40 @@
+EXPERIMENT PLAN: Improve Model Performance
+===========================================
+
+Current Issues:
+- Predictions too conservative (std 0.29% vs actual 2.44%)
+- Correlation: -0.035 (essentially random)
+- Direction accuracy: 50.77% (barely better than random)
+
+Proposed Changes:
+
+CHANGE 1: Loss Weighting (regression_weight = 3.0)
+--------------------------------------------------
+Location: MultiTask_Stockformer_train.py, line 318
+Change: loss = loss_regress + loss_class
+To:     loss = 3.0 * loss_regress + 1.0 * loss_class
+
+Rationale: Prioritize getting return magnitudes right over just direction
+
+CHANGE 2: Increase Learning Rate (0.001 → 0.002)
+--------------------------------------------------
+Location: config/Multitask_NIFTY200_Alpha158.conf, line 62
+Change: learning_rate = 0.001
+To:     learning_rate = 0.002
+
+Rationale: Escape conservative local minimum, explore more aggressively
+
+CHANGE 3: Reduce Early Stopping Patience (30 → 15)
+---------------------------------------------------
+Location: MultiTask_Stockformer_train.py, line 255
+Change: early_stop_patience = 30
+To:     early_stop_patience = 15
+
+Rationale: Model converges quickly, save training time
+
+Expected Improvements:
+- Wider prediction range (closer to actual volatility)
+- Better correlation (target > 0.05)
+- Higher direction accuracy (target > 55%)
+
+Run Time: ~60 minutes (20 epochs, likely stops earlier with patience=15)
