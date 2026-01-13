@@ -1,0 +1,18 @@
+Phase 8: Yahoo Finance Data Quality Report
+============================================================
+
+Date Range: 2020-04-01 to 2022-11-30
+Data Source: Yahoo Finance (Adjusted Prices)
+Universe: F&O stocks as of Apr 2020
+Total stocks in universe: 144
+Successfully downloaded: 138
+Failed/Skipped: 6
+
+Validation Summary:
+------------------------------------------------------------
+PASS: 138
+WARN: 0
+FAIL: 2
+
+Failed symbols:
+AMARAJABAT, EQUITAS, IBULHSGFIN, MCDOWELL-N, PVR, TATAMOTORS

@@ -1,0 +1,164 @@
+Folder already exists: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha158_MVP
+Subfolder created: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha158_MVP/version4
+loading data....
+loading end....
+constructing model begin....
+constructing model end....
+training begin....
+epoch 1, lr 0.001000, loss 1.4799, time 116.3 sec
+step 1, acc: 0.4913, mae: 0.0167, rmse: 0.0229, mape: 4.4520
+step 2, acc: 0.4968, mae: 0.0168, rmse: 0.0230, mape: 4.4636
+average, acc: 0.4941, mae: 0.0168, rmse: 0.0230, mape: 4.4578
+Epoch 1: New best mae: 0.0168, Model saved.
+epoch 2, lr 0.001000, loss 1.4171, time 115.4 sec
+step 1, acc: 0.4864, mae: 0.0168, rmse: 0.0230, mape: 4.4667
+step 2, acc: 0.4765, mae: 0.0167, rmse: 0.0229, mape: 4.4406
+average, acc: 0.4814, mae: 0.0167, rmse: 0.0230, mape: 4.4536
+Epoch 2: New best mae: 0.0167, Model saved.
+epoch 3, lr 0.001000, loss 1.4149, time 117.0 sec
+step 1, acc: 0.4785, mae: 0.0168, rmse: 0.0230, mape: 4.4675
+step 2, acc: 0.4966, mae: 0.0171, rmse: 0.0233, mape: 4.5328
+average, acc: 0.4875, mae: 0.0169, rmse: 0.0231, mape: 4.5002
+Epoch 3: No improvement for 1 epochs (best mae: 0.0167)
+epoch 4, lr 0.001000, loss 1.4057, time 114.8 sec
+step 1, acc: 0.5043, mae: 0.0169, rmse: 0.0231, mape: 4.4955
+step 2, acc: 0.5079, mae: 0.0168, rmse: 0.0230, mape: 4.4564
+average, acc: 0.5061, mae: 0.0168, rmse: 0.0230, mape: 4.4760
+Epoch 4: No improvement for 2 epochs (best mae: 0.0167)
+epoch 5, lr 0.001000, loss 1.3951, time 117.2 sec
+step 1, acc: 0.4873, mae: 0.0175, rmse: 0.0237, mape: 4.6651
+step 2, acc: 0.4885, mae: 0.0171, rmse: 0.0234, mape: 4.5473
+average, acc: 0.4879, mae: 0.0173, rmse: 0.0235, mape: 4.6062
+Epoch 5: No improvement for 3 epochs (best mae: 0.0167)
+epoch 6, lr 0.001000, loss 1.3952, time 116.3 sec
+step 1, acc: 0.5182, mae: 0.0170, rmse: 0.0232, mape: 4.5366
+step 2, acc: 0.5100, mae: 0.0171, rmse: 0.0233, mape: 4.5451
+average, acc: 0.5141, mae: 0.0171, rmse: 0.0233, mape: 4.5409
+Epoch 6: No improvement for 4 epochs (best mae: 0.0167)
+epoch 7, lr 0.001000, loss 1.3902, time 115.4 sec
+step 1, acc: 0.5016, mae: 0.0169, rmse: 0.0231, mape: 4.5027
+step 2, acc: 0.5015, mae: 0.0170, rmse: 0.0232, mape: 4.5056
+average, acc: 0.5015, mae: 0.0169, rmse: 0.0232, mape: 4.5041
+Epoch 7: No improvement for 5 epochs (best mae: 0.0167)
+epoch 8, lr 0.001000, loss 1.3865, time 116.4 sec
+step 1, acc: 0.4651, mae: 0.0170, rmse: 0.0232, mape: 4.5245
+step 2, acc: 0.5006, mae: 0.0169, rmse: 0.0231, mape: 4.4801
+average, acc: 0.4829, mae: 0.0169, rmse: 0.0232, mape: 4.5023
+Epoch 8: No improvement for 6 epochs (best mae: 0.0167)
+epoch 9, lr 0.001000, loss 1.3832, time 115.4 sec
+step 1, acc: 0.5266, mae: 0.0169, rmse: 0.0232, mape: 4.5067
+step 2, acc: 0.5138, mae: 0.0169, rmse: 0.0232, mape: 4.4982
+average, acc: 0.5202, mae: 0.0169, rmse: 0.0232, mape: 4.5024
+Epoch 9: No improvement for 7 epochs (best mae: 0.0167)
+epoch 10, lr 0.001000, loss 1.3816, time 121.4 sec
+step 1, acc: 0.4990, mae: 0.0171, rmse: 0.0233, mape: 4.5528
+step 2, acc: 0.5045, mae: 0.0171, rmse: 0.0233, mape: 4.5370
+average, acc: 0.5017, mae: 0.0171, rmse: 0.0233, mape: 4.5449
+Epoch 10: No improvement for 8 epochs (best mae: 0.0167)
+epoch 11, lr 0.001000, loss 1.3789, time 125.3 sec
+step 1, acc: 0.5023, mae: 0.0169, rmse: 0.0231, mape: 4.4928
+step 2, acc: 0.5043, mae: 0.0169, rmse: 0.0232, mape: 4.4925
+average, acc: 0.5033, mae: 0.0169, rmse: 0.0231, mape: 4.4926
+Epoch 11: No improvement for 9 epochs (best mae: 0.0167)
+epoch 12, lr 0.001000, loss 1.3804, time 126.9 sec
+step 1, acc: 0.4900, mae: 0.0168, rmse: 0.0230, mape: 4.4682
+step 2, acc: 0.4842, mae: 0.0169, rmse: 0.0231, mape: 4.4727
+average, acc: 0.4871, mae: 0.0168, rmse: 0.0230, mape: 4.4704
+Epoch 12: No improvement for 10 epochs (best mae: 0.0167)
+epoch 13, lr 0.001000, loss 1.3782, time 128.0 sec
+step 1, acc: 0.5052, mae: 0.0171, rmse: 0.0234, mape: 4.5510
+step 2, acc: 0.5074, mae: 0.0172, rmse: 0.0235, mape: 4.5566
+average, acc: 0.5063, mae: 0.0171, rmse: 0.0234, mape: 4.5538
+Epoch 13: No improvement for 11 epochs (best mae: 0.0167)
+epoch 14, lr 0.001000, loss 1.3814, time 128.0 sec
+step 1, acc: 0.5028, mae: 0.0169, rmse: 0.0231, mape: 4.5015
+step 2, acc: 0.5123, mae: 0.0170, rmse: 0.0232, mape: 4.5031
+average, acc: 0.5076, mae: 0.0169, rmse: 0.0232, mape: 4.5023
+Epoch 14: No improvement for 12 epochs (best mae: 0.0167)
+epoch 15, lr 0.001000, loss 1.3774, time 127.8 sec
+step 1, acc: 0.5039, mae: 0.0170, rmse: 0.0233, mape: 4.5341
+step 2, acc: 0.5033, mae: 0.0171, rmse: 0.0234, mape: 4.5343
+average, acc: 0.5036, mae: 0.0171, rmse: 0.0233, mape: 4.5342
+Epoch 15: No improvement for 13 epochs (best mae: 0.0167)
+epoch 16, lr 0.001000, loss 1.3781, time 128.2 sec
+step 1, acc: 0.5244, mae: 0.0168, rmse: 0.0230, mape: 4.4674
+step 2, acc: 0.5136, mae: 0.0168, rmse: 0.0231, mape: 4.4646
+average, acc: 0.5190, mae: 0.0168, rmse: 0.0230, mape: 4.4660
+Epoch 16: No improvement for 14 epochs (best mae: 0.0167)
+epoch 17, lr 0.001000, loss 1.3797, time 128.5 sec
+step 1, acc: 0.5164, mae: 0.0168, rmse: 0.0230, mape: 4.4773
+step 2, acc: 0.5187, mae: 0.0168, rmse: 0.0230, mape: 4.4605
+average, acc: 0.5175, mae: 0.0168, rmse: 0.0230, mape: 4.4689
+Epoch 17: No improvement for 15 epochs (best mae: 0.0167)
+epoch 18, lr 0.001000, loss 1.3751, time 132.3 sec
+step 1, acc: 0.5099, mae: 0.0170, rmse: 0.0232, mape: 4.5196
+step 2, acc: 0.5014, mae: 0.0169, rmse: 0.0232, mape: 4.4985
+average, acc: 0.5056, mae: 0.0170, rmse: 0.0232, mape: 4.5090
+Epoch 18: No improvement for 16 epochs (best mae: 0.0167)
+epoch 19, lr 0.001000, loss 1.3762, time 124.5 sec
+step 1, acc: 0.4995, mae: 0.0168, rmse: 0.0231, mape: 4.4819
+step 2, acc: 0.5052, mae: 0.0169, rmse: 0.0232, mape: 4.4888
+average, acc: 0.5024, mae: 0.0169, rmse: 0.0231, mape: 4.4854
+Epoch 19: No improvement for 17 epochs (best mae: 0.0167)
+epoch 20, lr 0.001000, loss 1.3713, time 127.9 sec
+step 1, acc: 0.5000, mae: 0.0169, rmse: 0.0232, mape: 4.5013
+step 2, acc: 0.4979, mae: 0.0169, rmse: 0.0232, mape: 4.4976
+average, acc: 0.4989, mae: 0.0169, rmse: 0.0232, mape: 4.4995
+Epoch 20: No improvement for 18 epochs (best mae: 0.0167)
+epoch 21, lr 0.001000, loss 1.3738, time 130.4 sec
+step 1, acc: 0.5003, mae: 0.0171, rmse: 0.0233, mape: 4.5518
+step 2, acc: 0.4983, mae: 0.0171, rmse: 0.0234, mape: 4.5509
+average, acc: 0.4993, mae: 0.0171, rmse: 0.0234, mape: 4.5514
+Epoch 21: No improvement for 19 epochs (best mae: 0.0167)
+epoch 22, lr 0.001000, loss 1.3773, time 135.0 sec
+step 1, acc: 0.4896, mae: 0.0171, rmse: 0.0233, mape: 4.5608
+step 2, acc: 0.4870, mae: 0.0172, rmse: 0.0234, mape: 4.5594
+average, acc: 0.4883, mae: 0.0171, rmse: 0.0234, mape: 4.5601
+Epoch 22: No improvement for 20 epochs (best mae: 0.0167)
+epoch 23, lr 0.000100, loss 1.3796, time 137.1 sec
+step 1, acc: 0.5081, mae: 0.0169, rmse: 0.0232, mape: 4.5103
+step 2, acc: 0.5082, mae: 0.0170, rmse: 0.0233, mape: 4.5096
+average, acc: 0.5082, mae: 0.0170, rmse: 0.0232, mape: 4.5100
+Epoch 23: No improvement for 21 epochs (best mae: 0.0167)
+epoch 24, lr 0.000100, loss 1.3696, time 135.8 sec
+step 1, acc: 0.5067, mae: 0.0169, rmse: 0.0232, mape: 4.5082
+step 2, acc: 0.5073, mae: 0.0170, rmse: 0.0232, mape: 4.5007
+average, acc: 0.5070, mae: 0.0169, rmse: 0.0232, mape: 4.5045
+Epoch 24: No improvement for 22 epochs (best mae: 0.0167)
+epoch 25, lr 0.000100, loss 1.3681, time 136.0 sec
+step 1, acc: 0.5079, mae: 0.0170, rmse: 0.0233, mape: 4.5374
+step 2, acc: 0.5095, mae: 0.0171, rmse: 0.0233, mape: 4.5325
+average, acc: 0.5087, mae: 0.0171, rmse: 0.0233, mape: 4.5349
+Epoch 25: No improvement for 23 epochs (best mae: 0.0167)
+epoch 26, lr 0.000100, loss 1.3665, time 140.7 sec
+step 1, acc: 0.5054, mae: 0.0171, rmse: 0.0234, mape: 4.5650
+step 2, acc: 0.5096, mae: 0.0172, rmse: 0.0234, mape: 4.5568
+average, acc: 0.5075, mae: 0.0172, rmse: 0.0234, mape: 4.5609
+Epoch 26: No improvement for 24 epochs (best mae: 0.0167)
+epoch 27, lr 0.000100, loss 1.3659, time 144.3 sec
+step 1, acc: 0.5035, mae: 0.0171, rmse: 0.0234, mape: 4.5628
+step 2, acc: 0.5056, mae: 0.0172, rmse: 0.0235, mape: 4.5577
+average, acc: 0.5046, mae: 0.0171, rmse: 0.0234, mape: 4.5603
+Epoch 27: No improvement for 25 epochs (best mae: 0.0167)
+epoch 28, lr 0.000100, loss 1.3661, time 146.8 sec
+step 1, acc: 0.5048, mae: 0.0170, rmse: 0.0233, mape: 4.5400
+step 2, acc: 0.5065, mae: 0.0171, rmse: 0.0234, mape: 4.5348
+average, acc: 0.5057, mae: 0.0171, rmse: 0.0233, mape: 4.5374
+Epoch 28: No improvement for 26 epochs (best mae: 0.0167)
+epoch 29, lr 0.000100, loss 1.3653, time 146.0 sec
+step 1, acc: 0.5043, mae: 0.0171, rmse: 0.0234, mape: 4.5618
+step 2, acc: 0.5068, mae: 0.0172, rmse: 0.0234, mape: 4.5552
+average, acc: 0.5055, mae: 0.0171, rmse: 0.0234, mape: 4.5585
+Epoch 29: No improvement for 27 epochs (best mae: 0.0167)
+epoch 30, lr 0.000100, loss 1.3670, time 149.3 sec
+step 1, acc: 0.5053, mae: 0.0171, rmse: 0.0233, mape: 4.5439
+step 2, acc: 0.5073, mae: 0.0171, rmse: 0.0234, mape: 4.5397
+average, acc: 0.5063, mae: 0.0171, rmse: 0.0234, mape: 4.5418
+Epoch 30: No improvement for 28 epochs (best mae: 0.0167)
+training end....
+testing begin....
+Total parameters: 890459
+step 1, acc: 0.5744, mae: 0.0135, rmse: 0.0213, mape: 4.2326
+step 2, acc: 0.5292, mae: 0.0133, rmse: 0.0212, mape: 4.2216
+average, acc: 0.5518, mae: 0.0134, rmse: 0.0213, mape: 4.2271
+testing end....

@@ -1,0 +1,33 @@
+# Large data files
+data/NIFTY200_Subset10/Alpha360/alpha360_combined.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model checkpoints and outputs
+*.pth
+*.ckpt
+outputs/
+checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

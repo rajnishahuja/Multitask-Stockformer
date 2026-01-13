@@ -1,0 +1,49 @@
+Folder created: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha360_Split2_Alpha158_MVP
+Subfolder created: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha360_Split2_Alpha158_MVP/version0
+loading data....
+loading end....
+constructing model begin....
+constructing model end....
+training begin....
+epoch 1, lr 0.001000, loss 1.4725, time 117.2 sec
+step 1, acc: 0.6322, mae: 0.0174, rmse: 0.0247, mape: 3.8110
+step 2, acc: 0.6771, mae: 0.0169, rmse: 0.0234, mape: 3.7223
+average, acc: 0.6546, mae: 0.0171, rmse: 0.0240, mape: 3.7667
+TopK Precision: 29.4%
+Epoch 1: New best mae: 0.0171, Model saved.
+Epoch 1: New best TopK Precision: 29.4%, TopK model saved.
+epoch 2, lr 0.001000, loss 1.1639, time 105.8 sec
+step 1, acc: 0.7531, mae: 0.0155, rmse: 0.0220, mape: 3.3931
+step 2, acc: 0.7983, mae: 0.0127, rmse: 0.0183, mape: 2.7959
+average, acc: 0.7757, mae: 0.0141, rmse: 0.0202, mape: 3.0945
+TopK Precision: 46.2%
+Epoch 2: New best mae: 0.0141, Model saved.
+Epoch 2: New best TopK Precision: 46.2%, TopK model saved.
+epoch 3, lr 0.001000, loss 0.8978, time 106.3 sec
+step 1, acc: 0.8295, mae: 0.0116, rmse: 0.0174, mape: 2.5461
+step 2, acc: 0.8563, mae: 0.0105, rmse: 0.0158, mape: 2.3219
+average, acc: 0.8429, mae: 0.0111, rmse: 0.0166, mape: 2.4340
+TopK Precision: 55.3%
+Epoch 3: New best mae: 0.0111, Model saved.
+Epoch 3: New best TopK Precision: 55.3%, TopK model saved.
+epoch 4, lr 0.001000, loss 0.6446, time 102.3 sec
+step 1, acc: 0.8761, mae: 0.0098, rmse: 0.0151, mape: 2.1450
+step 2, acc: 0.8853, mae: 0.0095, rmse: 0.0144, mape: 2.0864
+average, acc: 0.8807, mae: 0.0096, rmse: 0.0148, mape: 2.1157
+TopK Precision: 60.4%
+Epoch 4: New best mae: 0.0096, Model saved.
+Epoch 4: New best TopK Precision: 60.4%, TopK model saved.
+epoch 5, lr 0.001000, loss 0.4918, time 100.6 sec
+step 1, acc: 0.9057, mae: 0.0087, rmse: 0.0137, mape: 1.9021
+step 2, acc: 0.8999, mae: 0.0086, rmse: 0.0136, mape: 1.9067
+average, acc: 0.9028, mae: 0.0087, rmse: 0.0136, mape: 1.9044
+TopK Precision: 61.6%
+Epoch 5: New best mae: 0.0087, Model saved.
+Epoch 5: New best TopK Precision: 61.6%, TopK model saved.
+training end....
+testing begin....
+Total parameters: 975963
+step 1, acc: 0.4973, mae: 0.0209, rmse: 0.0281, mape: 6.0519
+step 2, acc: 0.4950, mae: 0.0207, rmse: 0.0278, mape: 5.9781
+average, acc: 0.4961, mae: 0.0208, rmse: 0.0280, mape: 6.0150
+testing end....

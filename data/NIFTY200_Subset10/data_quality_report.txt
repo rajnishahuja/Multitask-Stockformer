@@ -1,0 +1,17 @@
+Phase 8: Data Quality Report
+============================================================
+
+Date Range: 2020-04-01 to 2022-11-30
+Universe: F&O stocks as of Apr 2020
+Total stocks in universe: 144
+Successfully downloaded: 143
+Failed/Skipped: 1
+
+Validation Summary:
+------------------------------------------------------------
+PASS: 142
+WARN: 1
+FAIL: 1
+
+Failed symbols:
+EQUITASBNK

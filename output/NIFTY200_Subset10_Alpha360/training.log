@@ -1,0 +1,332 @@
+Folder already exists: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha360_Alpha158_MVP
+Subfolder created: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha360_Alpha158_MVP/version2
+loading data....
+loading end....
+constructing model begin....
+constructing model end....
+training begin....
+epoch 1, lr 0.001000, loss 1.4405, time 114.9 sec
+step 1, acc: 0.6580, mae: 0.0152, rmse: 0.0205, mape: 4.0628
+step 2, acc: 0.6907, mae: 0.0150, rmse: 0.0199, mape: 3.9895
+average, acc: 0.6744, mae: 0.0151, rmse: 0.0202, mape: 4.0262
+TopK Precision: 31.6%
+Epoch 1: New best mae: 0.0151, Model saved.
+Epoch 1: New best TopK Precision: 31.6%, TopK model saved.
+epoch 2, lr 0.001000, loss 1.0994, time 118.8 sec
+step 1, acc: 0.7604, mae: 0.0143, rmse: 0.0191, mape: 3.8149
+step 2, acc: 0.8044, mae: 0.0130, rmse: 0.0169, mape: 3.4439
+average, acc: 0.7824, mae: 0.0136, rmse: 0.0180, mape: 3.6294
+TopK Precision: 47.6%
+Epoch 2: New best mae: 0.0136, Model saved.
+Epoch 2: New best TopK Precision: 47.6%, TopK model saved.
+epoch 3, lr 0.001000, loss 0.8222, time 118.2 sec
+step 1, acc: 0.8370, mae: 0.0107, rmse: 0.0146, mape: 2.8594
+step 2, acc: 0.8493, mae: 0.0113, rmse: 0.0150, mape: 3.0015
+average, acc: 0.8432, mae: 0.0110, rmse: 0.0148, mape: 2.9304
+TopK Precision: 55.1%
+Epoch 3: New best mae: 0.0110, Model saved.
+Epoch 3: New best TopK Precision: 55.1%, TopK model saved.
+epoch 4, lr 0.001000, loss 0.5740, time 117.1 sec
+step 1, acc: 0.8877, mae: 0.0084, rmse: 0.0125, mape: 2.2345
+step 2, acc: 0.8915, mae: 0.0082, rmse: 0.0122, mape: 2.1665
+average, acc: 0.8896, mae: 0.0083, rmse: 0.0124, mape: 2.2005
+TopK Precision: 58.6%
+Epoch 4: New best mae: 0.0083, Model saved.
+Epoch 4: New best TopK Precision: 58.6%, TopK model saved.
+epoch 5, lr 0.001000, loss 0.4371, time 116.6 sec
+step 1, acc: 0.9037, mae: 0.0075, rmse: 0.0117, mape: 1.9931
+step 2, acc: 0.9019, mae: 0.0076, rmse: 0.0117, mape: 2.0162
+average, acc: 0.9028, mae: 0.0075, rmse: 0.0117, mape: 2.0047
+TopK Precision: 62.2%
+Epoch 5: New best mae: 0.0075, Model saved.
+Epoch 5: New best TopK Precision: 62.2%, TopK model saved.
+epoch 6, lr 0.001000, loss 0.3810, time 117.9 sec
+step 1, acc: 0.9185, mae: 0.0071, rmse: 0.0113, mape: 1.8860
+step 2, acc: 0.9163, mae: 0.0073, rmse: 0.0117, mape: 1.9369
+average, acc: 0.9174, mae: 0.0072, rmse: 0.0115, mape: 1.9115
+TopK Precision: 61.6%
+Epoch 6: New best mae: 0.0072, Model saved.
+epoch 7, lr 0.001000, loss 0.3325, time 117.7 sec
+step 1, acc: 0.9253, mae: 0.0074, rmse: 0.0121, mape: 1.9811
+step 2, acc: 0.9262, mae: 0.0073, rmse: 0.0118, mape: 1.9256
+average, acc: 0.9258, mae: 0.0073, rmse: 0.0120, mape: 1.9534
+TopK Precision: 62.4%
+Epoch 7: No MAE improvement for 1 epochs (best: 0.0072)
+Epoch 7: New best TopK Precision: 62.4%, TopK model saved.
+epoch 8, lr 0.001000, loss 0.3028, time 116.9 sec
+step 1, acc: 0.9222, mae: 0.0069, rmse: 0.0107, mape: 1.8271
+step 2, acc: 0.9226, mae: 0.0070, rmse: 0.0109, mape: 1.8679
+average, acc: 0.9224, mae: 0.0069, rmse: 0.0108, mape: 1.8475
+TopK Precision: 62.9%
+Epoch 8: New best mae: 0.0069, Model saved.
+Epoch 8: New best TopK Precision: 62.9%, TopK model saved.
+epoch 9, lr 0.001000, loss 0.2784, time 118.8 sec
+step 1, acc: 0.9241, mae: 0.0068, rmse: 0.0103, mape: 1.8002
+step 2, acc: 0.9248, mae: 0.0068, rmse: 0.0104, mape: 1.8132
+average, acc: 0.9244, mae: 0.0068, rmse: 0.0104, mape: 1.8067
+TopK Precision: 64.7%
+Epoch 9: New best mae: 0.0068, Model saved.
+Epoch 9: New best TopK Precision: 64.7%, TopK model saved.
+epoch 10, lr 0.001000, loss 0.2584, time 121.1 sec
+step 1, acc: 0.9277, mae: 0.0065, rmse: 0.0103, mape: 1.7283
+step 2, acc: 0.9295, mae: 0.0066, rmse: 0.0105, mape: 1.7575
+average, acc: 0.9286, mae: 0.0066, rmse: 0.0104, mape: 1.7429
+TopK Precision: 64.0%
+Epoch 10: New best mae: 0.0066, Model saved.
+epoch 11, lr 0.001000, loss 0.2439, time 119.1 sec
+step 1, acc: 0.9287, mae: 0.0063, rmse: 0.0102, mape: 1.6810
+step 2, acc: 0.9297, mae: 0.0063, rmse: 0.0103, mape: 1.6852
+average, acc: 0.9292, mae: 0.0063, rmse: 0.0103, mape: 1.6831
+TopK Precision: 65.2%
+Epoch 11: New best mae: 0.0063, Model saved.
+Epoch 11: New best TopK Precision: 65.2%, TopK model saved.
+epoch 12, lr 0.001000, loss 0.2327, time 120.3 sec
+step 1, acc: 0.9267, mae: 0.0074, rmse: 0.0115, mape: 1.9627
+step 2, acc: 0.9284, mae: 0.0074, rmse: 0.0114, mape: 1.9511
+average, acc: 0.9275, mae: 0.0074, rmse: 0.0114, mape: 1.9569
+TopK Precision: 65.5%
+Epoch 12: No MAE improvement for 1 epochs (best: 0.0063)
+Epoch 12: New best TopK Precision: 65.5%, TopK model saved.
+epoch 13, lr 0.001000, loss 0.2233, time 120.8 sec
+step 1, acc: 0.9340, mae: 0.0071, rmse: 0.0113, mape: 1.9017
+step 2, acc: 0.9332, mae: 0.0071, rmse: 0.0112, mape: 1.8740
+average, acc: 0.9336, mae: 0.0071, rmse: 0.0112, mape: 1.8879
+TopK Precision: 63.7%
+Epoch 13: No MAE improvement for 2 epochs (best: 0.0063)
+epoch 14, lr 0.001000, loss 0.2061, time 123.1 sec
+step 1, acc: 0.9309, mae: 0.0065, rmse: 0.0104, mape: 1.7325
+step 2, acc: 0.9306, mae: 0.0066, rmse: 0.0106, mape: 1.7467
+average, acc: 0.9307, mae: 0.0065, rmse: 0.0105, mape: 1.7396
+TopK Precision: 64.6%
+Epoch 14: No MAE improvement for 3 epochs (best: 0.0063)
+epoch 15, lr 0.001000, loss 0.2005, time 121.8 sec
+step 1, acc: 0.9326, mae: 0.0071, rmse: 0.0111, mape: 1.9017
+step 2, acc: 0.9320, mae: 0.0069, rmse: 0.0109, mape: 1.8415
+average, acc: 0.9323, mae: 0.0070, rmse: 0.0110, mape: 1.8716
+TopK Precision: 64.4%
+Epoch 15: No MAE improvement for 4 epochs (best: 0.0063)
+epoch 16, lr 0.001000, loss 0.1872, time 119.0 sec
+step 1, acc: 0.9329, mae: 0.0067, rmse: 0.0110, mape: 1.7903
+step 2, acc: 0.9331, mae: 0.0068, rmse: 0.0111, mape: 1.7923
+average, acc: 0.9330, mae: 0.0067, rmse: 0.0111, mape: 1.7913
+TopK Precision: 64.2%
+Epoch 16: No MAE improvement for 5 epochs (best: 0.0063)
+epoch 17, lr 0.001000, loss 0.1851, time 118.0 sec
+step 1, acc: 0.9326, mae: 0.0063, rmse: 0.0103, mape: 1.6672
+step 2, acc: 0.9333, mae: 0.0063, rmse: 0.0104, mape: 1.6705
+average, acc: 0.9329, mae: 0.0063, rmse: 0.0104, mape: 1.6688
+TopK Precision: 65.6%
+Epoch 17: New best mae: 0.0063, Model saved.
+Epoch 17: New best TopK Precision: 65.6%, TopK model saved.
+epoch 18, lr 0.001000, loss 0.1758, time 120.2 sec
+step 1, acc: 0.9344, mae: 0.0068, rmse: 0.0113, mape: 1.8100
+step 2, acc: 0.9313, mae: 0.0069, rmse: 0.0114, mape: 1.8342
+average, acc: 0.9328, mae: 0.0069, rmse: 0.0113, mape: 1.8221
+TopK Precision: 64.0%
+Epoch 18: No MAE improvement for 1 epochs (best: 0.0063)
+epoch 19, lr 0.001000, loss 0.1660, time 120.8 sec
+step 1, acc: 0.9328, mae: 0.0063, rmse: 0.0103, mape: 1.6685
+step 2, acc: 0.9326, mae: 0.0063, rmse: 0.0104, mape: 1.6832
+average, acc: 0.9327, mae: 0.0063, rmse: 0.0104, mape: 1.6759
+TopK Precision: 65.3%
+Epoch 19: No MAE improvement for 2 epochs (best: 0.0063)
+epoch 20, lr 0.001000, loss 0.1602, time 121.1 sec
+step 1, acc: 0.9310, mae: 0.0063, rmse: 0.0101, mape: 1.6713
+step 2, acc: 0.9282, mae: 0.0064, rmse: 0.0104, mape: 1.7081
+average, acc: 0.9296, mae: 0.0064, rmse: 0.0103, mape: 1.6897
+TopK Precision: 66.9%
+Epoch 20: No MAE improvement for 3 epochs (best: 0.0063)
+Epoch 20: New best TopK Precision: 66.9%, TopK model saved.
+epoch 21, lr 0.001000, loss 0.1539, time 117.1 sec
+step 1, acc: 0.9353, mae: 0.0063, rmse: 0.0102, mape: 1.6675
+step 2, acc: 0.9330, mae: 0.0063, rmse: 0.0104, mape: 1.6812
+average, acc: 0.9341, mae: 0.0063, rmse: 0.0103, mape: 1.6744
+TopK Precision: 66.0%
+Epoch 21: No MAE improvement for 4 epochs (best: 0.0063)
+epoch 22, lr 0.001000, loss 0.1572, time 121.9 sec
+step 1, acc: 0.9336, mae: 0.0066, rmse: 0.0110, mape: 1.7521
+step 2, acc: 0.9331, mae: 0.0068, rmse: 0.0114, mape: 1.8075
+average, acc: 0.9333, mae: 0.0067, rmse: 0.0112, mape: 1.7798
+TopK Precision: 65.3%
+Epoch 22: No MAE improvement for 5 epochs (best: 0.0063)
+epoch 23, lr 0.001000, loss 0.1468, time 122.8 sec
+step 1, acc: 0.9364, mae: 0.0061, rmse: 0.0100, mape: 1.6239
+step 2, acc: 0.9353, mae: 0.0061, rmse: 0.0101, mape: 1.6295
+average, acc: 0.9358, mae: 0.0061, rmse: 0.0101, mape: 1.6267
+TopK Precision: 66.2%
+Epoch 23: New best mae: 0.0061, Model saved.
+epoch 24, lr 0.001000, loss 0.1386, time 143.0 sec
+step 1, acc: 0.9315, mae: 0.0064, rmse: 0.0105, mape: 1.7032
+step 2, acc: 0.9318, mae: 0.0064, rmse: 0.0106, mape: 1.7116
+average, acc: 0.9316, mae: 0.0064, rmse: 0.0106, mape: 1.7074
+TopK Precision: 64.8%
+Epoch 24: No MAE improvement for 1 epochs (best: 0.0061)
+epoch 25, lr 0.001000, loss 0.1468, time 125.1 sec
+step 1, acc: 0.9276, mae: 0.0066, rmse: 0.0108, mape: 1.7622
+step 2, acc: 0.9344, mae: 0.0065, rmse: 0.0107, mape: 1.7306
+average, acc: 0.9310, mae: 0.0066, rmse: 0.0108, mape: 1.7464
+TopK Precision: 65.2%
+Epoch 25: No MAE improvement for 2 epochs (best: 0.0061)
+epoch 26, lr 0.001000, loss 0.1427, time 124.7 sec
+step 1, acc: 0.9283, mae: 0.0064, rmse: 0.0106, mape: 1.7048
+step 2, acc: 0.9291, mae: 0.0064, rmse: 0.0106, mape: 1.6969
+average, acc: 0.9287, mae: 0.0064, rmse: 0.0106, mape: 1.7008
+TopK Precision: 67.8%
+Epoch 26: No MAE improvement for 3 epochs (best: 0.0061)
+Epoch 26: New best TopK Precision: 67.8%, TopK model saved.
+epoch 27, lr 0.001000, loss 0.1401, time 125.8 sec
+step 1, acc: 0.9301, mae: 0.0063, rmse: 0.0105, mape: 1.6908
+step 2, acc: 0.9296, mae: 0.0064, rmse: 0.0106, mape: 1.6985
+average, acc: 0.9298, mae: 0.0064, rmse: 0.0105, mape: 1.6947
+TopK Precision: 65.3%
+Epoch 27: No MAE improvement for 4 epochs (best: 0.0061)
+epoch 28, lr 0.001000, loss 0.1317, time 121.6 sec
+step 1, acc: 0.9329, mae: 0.0071, rmse: 0.0112, mape: 1.8989
+step 2, acc: 0.9312, mae: 0.0070, rmse: 0.0111, mape: 1.8553
+average, acc: 0.9320, mae: 0.0071, rmse: 0.0111, mape: 1.8771
+TopK Precision: 64.5%
+Epoch 28: No MAE improvement for 5 epochs (best: 0.0061)
+epoch 29, lr 0.001000, loss 0.1305, time 121.7 sec
+step 1, acc: 0.9312, mae: 0.0062, rmse: 0.0100, mape: 1.6578
+step 2, acc: 0.9296, mae: 0.0062, rmse: 0.0099, mape: 1.6437
+average, acc: 0.9304, mae: 0.0062, rmse: 0.0099, mape: 1.6507
+TopK Precision: 66.6%
+Epoch 29: No MAE improvement for 6 epochs (best: 0.0061)
+epoch 30, lr 0.001000, loss 0.1246, time 125.3 sec
+step 1, acc: 0.9314, mae: 0.0064, rmse: 0.0104, mape: 1.6954
+step 2, acc: 0.9315, mae: 0.0063, rmse: 0.0103, mape: 1.6699
+average, acc: 0.9315, mae: 0.0063, rmse: 0.0104, mape: 1.6826
+TopK Precision: 67.3%
+Epoch 30: No MAE improvement for 7 epochs (best: 0.0061)
+epoch 31, lr 0.001000, loss 0.1222, time 120.6 sec
+step 1, acc: 0.9310, mae: 0.0062, rmse: 0.0099, mape: 1.6437
+step 2, acc: 0.9320, mae: 0.0061, rmse: 0.0100, mape: 1.6246
+average, acc: 0.9315, mae: 0.0061, rmse: 0.0100, mape: 1.6341
+TopK Precision: 66.9%
+Epoch 31: No MAE improvement for 8 epochs (best: 0.0061)
+epoch 32, lr 0.001000, loss 0.1167, time 131.7 sec
+step 1, acc: 0.9342, mae: 0.0067, rmse: 0.0107, mape: 1.7907
+step 2, acc: 0.9337, mae: 0.0067, rmse: 0.0107, mape: 1.7857
+average, acc: 0.9340, mae: 0.0067, rmse: 0.0107, mape: 1.7882
+TopK Precision: 65.9%
+Epoch 32: No MAE improvement for 9 epochs (best: 0.0061)
+epoch 33, lr 0.001000, loss 0.1176, time 124.2 sec
+step 1, acc: 0.9315, mae: 0.0062, rmse: 0.0100, mape: 1.6480
+step 2, acc: 0.9319, mae: 0.0062, rmse: 0.0101, mape: 1.6519
+average, acc: 0.9317, mae: 0.0062, rmse: 0.0101, mape: 1.6500
+TopK Precision: 66.2%
+Epoch 33: No MAE improvement for 10 epochs (best: 0.0061)
+epoch 34, lr 0.001000, loss 0.1138, time 139.3 sec
+step 1, acc: 0.9263, mae: 0.0063, rmse: 0.0101, mape: 1.6715
+step 2, acc: 0.9292, mae: 0.0063, rmse: 0.0103, mape: 1.6767
+average, acc: 0.9278, mae: 0.0063, rmse: 0.0102, mape: 1.6741
+TopK Precision: 67.0%
+Epoch 34: No MAE improvement for 11 epochs (best: 0.0061)
+epoch 35, lr 0.001000, loss 0.1125, time 119.5 sec
+step 1, acc: 0.9310, mae: 0.0062, rmse: 0.0098, mape: 1.6451
+step 2, acc: 0.9313, mae: 0.0060, rmse: 0.0097, mape: 1.6029
+average, acc: 0.9311, mae: 0.0061, rmse: 0.0098, mape: 1.6240
+TopK Precision: 65.8%
+Epoch 35: New best mae: 0.0061, Model saved.
+epoch 36, lr 0.001000, loss 0.1021, time 118.5 sec
+step 1, acc: 0.9297, mae: 0.0062, rmse: 0.0099, mape: 1.6628
+step 2, acc: 0.9277, mae: 0.0063, rmse: 0.0099, mape: 1.6650
+average, acc: 0.9287, mae: 0.0063, rmse: 0.0099, mape: 1.6639
+TopK Precision: 65.1%
+Epoch 36: No MAE improvement for 1 epochs (best: 0.0061)
+epoch 37, lr 0.001000, loss 0.1083, time 118.3 sec
+step 1, acc: 0.9330, mae: 0.0063, rmse: 0.0104, mape: 1.6786
+step 2, acc: 0.9309, mae: 0.0063, rmse: 0.0106, mape: 1.6802
+average, acc: 0.9319, mae: 0.0063, rmse: 0.0105, mape: 1.6794
+TopK Precision: 64.6%
+Epoch 37: No MAE improvement for 2 epochs (best: 0.0061)
+epoch 38, lr 0.001000, loss 0.1037, time 120.4 sec
+step 1, acc: 0.9300, mae: 0.0065, rmse: 0.0105, mape: 1.7291
+step 2, acc: 0.9297, mae: 0.0065, rmse: 0.0105, mape: 1.7214
+average, acc: 0.9298, mae: 0.0065, rmse: 0.0105, mape: 1.7252
+TopK Precision: 65.2%
+Epoch 38: No MAE improvement for 3 epochs (best: 0.0061)
+epoch 39, lr 0.001000, loss 0.1012, time 117.3 sec
+step 1, acc: 0.9349, mae: 0.0062, rmse: 0.0100, mape: 1.6590
+step 2, acc: 0.9351, mae: 0.0062, rmse: 0.0100, mape: 1.6369
+average, acc: 0.9350, mae: 0.0062, rmse: 0.0100, mape: 1.6480
+TopK Precision: 65.4%
+Epoch 39: No MAE improvement for 4 epochs (best: 0.0061)
+epoch 40, lr 0.001000, loss 0.0994, time 125.1 sec
+step 1, acc: 0.9315, mae: 0.0068, rmse: 0.0108, mape: 1.8184
+step 2, acc: 0.9288, mae: 0.0067, rmse: 0.0106, mape: 1.7710
+average, acc: 0.9302, mae: 0.0067, rmse: 0.0107, mape: 1.7947
+TopK Precision: 65.5%
+Epoch 40: No MAE improvement for 5 epochs (best: 0.0061)
+epoch 41, lr 0.001000, loss 0.0976, time 128.3 sec
+step 1, acc: 0.9353, mae: 0.0063, rmse: 0.0103, mape: 1.6670
+step 2, acc: 0.9319, mae: 0.0063, rmse: 0.0103, mape: 1.6648
+average, acc: 0.9336, mae: 0.0063, rmse: 0.0103, mape: 1.6659
+TopK Precision: 67.2%
+Epoch 41: No MAE improvement for 6 epochs (best: 0.0061)
+epoch 42, lr 0.001000, loss 0.0938, time 124.5 sec
+step 1, acc: 0.9280, mae: 0.0063, rmse: 0.0101, mape: 1.6694
+step 2, acc: 0.9304, mae: 0.0063, rmse: 0.0100, mape: 1.6664
+average, acc: 0.9292, mae: 0.0063, rmse: 0.0101, mape: 1.6679
+TopK Precision: 66.0%
+Epoch 42: No MAE improvement for 7 epochs (best: 0.0061)
+epoch 43, lr 0.001000, loss 0.0969, time 124.1 sec
+step 1, acc: 0.9315, mae: 0.0068, rmse: 0.0104, mape: 1.8090
+step 2, acc: 0.9298, mae: 0.0066, rmse: 0.0103, mape: 1.7569
+average, acc: 0.9307, mae: 0.0067, rmse: 0.0103, mape: 1.7830
+TopK Precision: 66.0%
+Epoch 43: No MAE improvement for 8 epochs (best: 0.0061)
+epoch 44, lr 0.001000, loss 0.0922, time 140.3 sec
+step 1, acc: 0.9253, mae: 0.0063, rmse: 0.0103, mape: 1.6754
+step 2, acc: 0.9283, mae: 0.0062, rmse: 0.0103, mape: 1.6490
+average, acc: 0.9268, mae: 0.0063, rmse: 0.0103, mape: 1.6622
+TopK Precision: 65.8%
+Epoch 44: No MAE improvement for 9 epochs (best: 0.0061)
+epoch 45, lr 0.001000, loss 0.0898, time 126.4 sec
+step 1, acc: 0.9339, mae: 0.0063, rmse: 0.0103, mape: 1.6879
+step 2, acc: 0.9322, mae: 0.0063, rmse: 0.0102, mape: 1.6848
+average, acc: 0.9331, mae: 0.0063, rmse: 0.0102, mape: 1.6864
+TopK Precision: 65.7%
+Epoch 45: No MAE improvement for 10 epochs (best: 0.0061)
+epoch 46, lr 0.001000, loss 0.0883, time 124.8 sec
+step 1, acc: 0.9300, mae: 0.0064, rmse: 0.0103, mape: 1.6999
+step 2, acc: 0.9275, mae: 0.0063, rmse: 0.0102, mape: 1.6728
+average, acc: 0.9287, mae: 0.0063, rmse: 0.0102, mape: 1.6863
+TopK Precision: 65.7%
+Epoch 46: No MAE improvement for 11 epochs (best: 0.0061)
+epoch 47, lr 0.001000, loss 0.0905, time 125.9 sec
+step 1, acc: 0.9339, mae: 0.0063, rmse: 0.0096, mape: 1.6707
+step 2, acc: 0.9316, mae: 0.0064, rmse: 0.0096, mape: 1.6968
+average, acc: 0.9328, mae: 0.0063, rmse: 0.0096, mape: 1.6838
+TopK Precision: 66.0%
+Epoch 47: No MAE improvement for 12 epochs (best: 0.0061)
+epoch 48, lr 0.001000, loss 0.0879, time 124.6 sec
+step 1, acc: 0.9310, mae: 0.0069, rmse: 0.0109, mape: 1.8363
+step 2, acc: 0.9301, mae: 0.0068, rmse: 0.0107, mape: 1.8070
+average, acc: 0.9305, mae: 0.0068, rmse: 0.0108, mape: 1.8216
+TopK Precision: 65.5%
+Epoch 48: No MAE improvement for 13 epochs (best: 0.0061)
+epoch 49, lr 0.001000, loss 0.0835, time 123.4 sec
+step 1, acc: 0.9213, mae: 0.0065, rmse: 0.0103, mape: 1.7277
+step 2, acc: 0.9256, mae: 0.0065, rmse: 0.0104, mape: 1.7316
+average, acc: 0.9234, mae: 0.0065, rmse: 0.0103, mape: 1.7296
+TopK Precision: 66.4%
+Epoch 49: No MAE improvement for 14 epochs (best: 0.0061)
+epoch 50, lr 0.001000, loss 0.0847, time 123.5 sec
+step 1, acc: 0.9312, mae: 0.0069, rmse: 0.0113, mape: 1.8480
+step 2, acc: 0.9294, mae: 0.0067, rmse: 0.0110, mape: 1.7894
+average, acc: 0.9303, mae: 0.0068, rmse: 0.0112, mape: 1.8187
+TopK Precision: 67.3%
+Epoch 50: No MAE improvement for 15 epochs (best: 0.0061)
+epoch 51, lr 0.001000, loss 0.0848, time 123.9 sec
+step 1, acc: 0.9311, mae: 0.0063, rmse: 0.0100, mape: 1.6710
+step 2, acc: 0.9339, mae: 0.0062, rmse: 0.0099, mape: 1.6471
+average, acc: 0.9325, mae: 0.0062, rmse: 0.0100, mape: 1.6591
+TopK Precision: 66.9%
+Epoch 51: No MAE improvement for 16 epochs (best: 0.0061)
+epoch 52, lr 0.001000, loss 0.0815, time 150.5 sec
+step 1, acc: 0.9257, mae: 0.0065, rmse: 0.0103, mape: 1.7240
+step 2, acc: 0.9288, mae: 0.0065, rmse: 0.0103, mape: 1.7309
+average, acc: 0.9273, mae: 0.0065, rmse: 0.0103, mape: 1.7274
+TopK Precision: 64.0%
+Epoch 52: No MAE improvement for 17 epochs (best: 0.0061)

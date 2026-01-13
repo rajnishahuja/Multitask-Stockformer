@@ -17,6 +17,7 @@ def log_string(log, string):
     log.write(string + '\n')
     log.flush()
     print(string)
+    sys.stdout.flush()  # Ensure unbuffered output
 
 def metric(reg_pred, reg_label, class_pred, class_label):
     with np.errstate(divide='ignore', invalid='ignore'):
@@ -94,6 +95,161 @@ def masked_mae(preds, labels, null_val=np.nan):
     return torch.mean(loss)
 
 
+def topk_ranking_loss(preds, labels, k=10, margin=0.01):
+    """
+    TopK Ranking Loss: Penalize when predicted rankings don't match actual top-K.
+    
+    For each sample, we want:
+    - Predicted values for actual top-K stocks to be HIGHER than non-top-K stocks
+    - Uses a margin-based pairwise loss (similar to hinge loss)
+    
+    Args:
+        preds: Predicted returns, shape (batch, time_steps, num_stocks)
+        labels: Actual returns, shape (batch, time_steps, num_stocks)
+        k: Number of top stocks to focus on
+        margin: Minimum margin between top-K and non-top-K predictions
+    
+    Returns:
+        Scalar loss value
+    """
+    batch_size, time_steps, num_stocks = preds.shape
+    total_loss = 0.0
+    count = 0
+    
+    for b in range(batch_size):
+        for t in range(time_steps):
+            pred = preds[b, t, :]  # (num_stocks,)
+            label = labels[b, t, :]  # (num_stocks,)
+            
+            # Mask out NaN values
+            valid_mask = ~(torch.isnan(label) | torch.isinf(label))
+            if valid_mask.sum() < k * 2:
+                continue
+            
+            # Get indices of actual top-K stocks
+            valid_labels = label.clone()
+            valid_labels[~valid_mask] = float('-inf')
+            actual_topk_idx = torch.topk(valid_labels, k).indices
+            
+            # Get indices of actual bottom stocks (non-top-K)
+            actual_bottomk_idx = torch.topk(-valid_labels, k).indices
+            
+            # For each top-K stock, its predicted value should be higher than
+            # each bottom-K stock by at least 'margin'
+            topk_preds = pred[actual_topk_idx]  # (k,)
+            bottomk_preds = pred[actual_bottomk_idx]  # (k,)
+            
+            # Pairwise margin loss: max(0, margin - (top_pred - bottom_pred))
+            # For each top-K, compare with mean of bottom-K
+            for i in range(k):
+                for j in range(k):
+                    # We want: top_pred > bottom_pred + margin
+                    # Loss: max(0, margin + bottom_pred - top_pred)
+                    diff = margin + bottomk_preds[j] - topk_preds[i]
+                    total_loss += torch.relu(diff)
+                    count += 1
+    
+    if count > 0:
+        return total_loss / count
+    else:
+        return torch.tensor(0.0, device=preds.device)
+
+
+def _compute_regression_loss_with_topk(y_true, y_predicted, topk_weight=0.5):
+    """
+    Combined loss: MAE + TopK ranking loss.
+    
+    Args:
+        y_true: Actual returns
+        y_predicted: Predicted returns
+        topk_weight: Weight for TopK loss (0.0 = MAE only, 1.0 = TopK only)
+    """
+    mae_loss = masked_mae(y_predicted, y_true, np.nan)
+    topk_loss = topk_ranking_loss(y_predicted, y_true, k=10, margin=0.01)
+    
+    combined_loss = (1 - topk_weight) * mae_loss + topk_weight * topk_loss
+    return combined_loss
+
+
+def listmle_loss(preds, labels, eps=1e-10):
+    """
+    ListMLE Loss: Optimizes the probability of correct ranking.
+    
+    ListMLE treats ranking as a sequential selection problem:
+    - At each step, select the item with highest actual value
+    - The loss is -log(probability of selecting that item given predictions)
+    
+    Reference: Xia et al., "Listwise Approach to Learning to Rank"
+    
+    Args:
+        preds: Predicted scores, shape (batch, time_steps, num_stocks)
+        labels: Actual values (used to determine correct ordering), shape (batch, time_steps, num_stocks)
+        eps: Small value for numerical stability
+    
+    Returns:
+        Scalar loss value
+    """
+    batch_size, time_steps, num_stocks = preds.shape
+    total_loss = 0.0
+    count = 0
+    
+    for b in range(batch_size):
+        for t in range(time_steps):
+            pred = preds[b, t, :]  # (num_stocks,)
+            label = labels[b, t, :]  # (num_stocks,)
+            
+            # Mask out NaN values
+            valid_mask = ~(torch.isnan(label) | torch.isinf(label))
+            if valid_mask.sum() < 10:
+                continue
+            
+            pred_valid = pred[valid_mask]
+            label_valid = label[valid_mask]
+            n = pred_valid.shape[0]
+            
+            # Get permutation that sorts labels in descending order (best stocks first)
+            sorted_indices = torch.argsort(label_valid, descending=True)
+            
+            # Reorder predictions according to correct ranking
+            pred_sorted = pred_valid[sorted_indices]
+            
+            # ListMLE: For each position, compute log-softmax over remaining items
+            # loss = -sum_i log(exp(pred_i) / sum_j>=i exp(pred_j))
+            loss = 0.0
+            for i in range(min(n, 20)):  # Focus on top 20 positions for efficiency
+                # Log-sum-exp of remaining predictions
+                remaining = pred_sorted[i:]
+                max_val = remaining.max()
+                log_sum_exp = max_val + torch.log(torch.sum(torch.exp(remaining - max_val)) + eps)
+                
+                # Negative log probability of selecting the correct item
+                loss += log_sum_exp - pred_sorted[i]
+            
+            total_loss += loss
+            count += 1
+    
+    if count > 0:
+        return total_loss / count
+    else:
+        return torch.tensor(0.0, device=preds.device)
+
+
+def _compute_regression_loss_with_listmle(y_true, y_predicted, listmle_weight=0.5):
+    """
+    Combined loss: MAE + ListMLE ranking loss.
+    
+    Args:
+        y_true: Actual returns
+        y_predicted: Predicted returns
+        listmle_weight: Weight for ListMLE loss (0.0 = MAE only, 1.0 = ListMLE only)
+    """
+    mae_loss = masked_mae(y_predicted, y_true, np.nan)
+    list_loss = listmle_loss(y_predicted, y_true)
+    
+    combined_loss = (1 - listmle_weight) * mae_loss + listmle_weight * list_loss
+    return combined_loss
+
+
 def disentangle(data, w, j):
     # Disentangle
     dwt = DWT1DForward(wave=w, J=j)
@@ -135,8 +291,19 @@ class StockDataset(Dataset):
         # Load factor CSVs from config-specified directory
         # Original: hardcoded path to Alpha_360 factors (360 features)
         # Adapted: dynamic path from config for Alpha_158 factors (22 features for NIFTY-200)
+        # Phase 8 improvement: Use selected_factors.txt if available (IC-filtered factors)
         path = args.factor_dir
-        files = [f for f in os.listdir(path) if f.endswith('.csv') and 'ic_summary' not in f.lower()]
+        
+        # Check for selected_factors.txt (Phase 8 improvement: IC-filtered factors)
+        selected_factors_file = os.path.join(path, 'selected_factors.txt')
+        if os.path.exists(selected_factors_file):
+            with open(selected_factors_file, 'r') as f:
+                selected_factors = [line.strip() for line in f if line.strip()]
+            files = [f"{factor}.csv" for factor in selected_factors if os.path.exists(os.path.join(path, f"{factor}.csv"))]
+            print(f"Using {len(files)} selected factors from selected_factors.txt")
+        else:
+            files = [f for f in os.listdir(path) if f.endswith('.csv') and 'ic_summary' not in f.lower()]
+            print(f"Using all {len(files)} factor CSVs (no selected_factors.txt found)")
         
         # Load first file to get expected shape
         first_df = pd.read_csv(os.path.join(path, files[0]), index_col=0)

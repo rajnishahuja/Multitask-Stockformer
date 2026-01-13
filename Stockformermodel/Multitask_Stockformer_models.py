@@ -51,12 +51,13 @@ class temporalEmbedding(nn.Module):
         return TE  # [B,T,1,F]
 
 class FeedForward(nn.Module):
-    def __init__(self, fea, res_ln=False):
+    def __init__(self, fea, res_ln=False, dropout=0.1):
         super(FeedForward, self).__init__()
         self.res_ln = res_ln
         self.L = len(fea) - 1
         self.linear = nn.ModuleList([nn.Linear(fea[i], fea[i+1]) for i in range(self.L)])
         self.ln = nn.LayerNorm(fea[self.L], elementwise_affine=False)
+        self.dropout = nn.Dropout(dropout)  # Phase 8 improvement: add dropout
 
     def forward(self, inputs):
         x = inputs
@@ -64,13 +65,14 @@ class FeedForward(nn.Module):
             x = self.linear[i](x)
             if i != self.L-1:
                 x = F.relu(x)
+                x = self.dropout(x)  # Phase 8 improvement: apply dropout after activation
         if self.res_ln:
             x += inputs
             x = self.ln(x)
         return x
 
 class sparseSpatialAttention(nn.Module):
-    def __init__(self, features, h, d, s):
+    def __init__(self, features, h, d, s, dropout=0.1):
         super(sparseSpatialAttention, self).__init__()
         self.qfc = nn.Linear(features, features)
         self.kfc = nn.Linear(features, features)
@@ -85,7 +87,8 @@ class sparseSpatialAttention(nn.Module):
         self.ff = nn.Sequential(nn.Linear(features, features),
                                  nn.ReLU(),
                                  nn.Linear(features, features))
-
+        
+        self.attn_dropout = nn.Dropout(dropout)  # Phase 8 improvement: dropout after attention
         self.proj = nn.Linear(d, 1)
 
     def forward(self, x, adjgat):
@@ -114,6 +117,7 @@ class sparseSpatialAttention(nn.Module):
                                                                                              torch.arange(N)[None, None, :, None],cp,:].squeeze(-2)
 
         value = self.ofc(value) + x_
+        value = self.attn_dropout(value)  # Phase 8 improvement: apply dropout
         value = self.ln(value)
         return self.ff(value)
 
@@ -177,7 +181,7 @@ class Chomp1d(nn.Module):
         return x[:, :, :, :-self.chomp_size].contiguous()
 
 class temporalConvNet(nn.Module):
-    def __init__(self, features, kernel_size=2, dropout=0.2, levels=1):
+    def __init__(self, features, kernel_size=2, dropout=0.3, levels=1):  # Phase 8: increased dropout 0.2->0.3
         super(temporalConvNet, self).__init__()
         layers = []
         for i in range(levels):

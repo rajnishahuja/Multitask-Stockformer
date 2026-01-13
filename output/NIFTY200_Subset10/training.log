@@ -1,0 +1,75 @@
+Folder already exists: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha158_MVP
+Subfolder created: ./runs/Multitask_Stockformer/NIFTY200_Subset10_Alpha158_MVP/version11
+loading data....
+loading end....
+constructing model begin....
+constructing model end....
+training begin....
+epoch 1, lr 0.001000, loss 99.0274, time 122.6 sec
+step 1, acc: 0.5068, mae: 0.1199, rmse: 0.1671, mape: 31.9405
+step 2, acc: 0.4968, mae: 0.2592, rmse: 0.3263, mape: 68.7902
+average, acc: 0.5018, mae: 0.1895, rmse: 0.2467, mape: 50.3653
+TopK Precision: 13.6%
+Epoch 1: New best mae: 0.1895, Model saved.
+Epoch 1: New best TopK Precision: 13.6%, TopK model saved.
+epoch 2, lr 0.001000, loss 98.7739, time 123.6 sec
+step 1, acc: 0.4913, mae: 0.3535, rmse: 0.4448, mape: 94.1985
+step 2, acc: 0.4968, mae: 0.3626, rmse: 0.4435, mape: 96.2401
+average, acc: 0.4941, mae: 0.3581, rmse: 0.4441, mape: 95.2193
+TopK Precision: 12.7%
+Epoch 2: No TopK improvement for 1 epochs (best: 13.6%)
+epoch 3, lr 0.001000, loss 98.6144, time 123.9 sec
+step 1, acc: 0.5038, mae: 0.3879, rmse: 0.4407, mape: 103.3537
+step 2, acc: 0.4876, mae: 0.3478, rmse: 0.4064, mape: 92.3000
+average, acc: 0.4957, mae: 0.3678, rmse: 0.4236, mape: 97.8269
+TopK Precision: 12.5%
+Epoch 3: No TopK improvement for 2 epochs (best: 13.6%)
+epoch 4, lr 0.001000, loss 98.4127, time 124.1 sec
+step 1, acc: 0.5016, mae: 0.2846, rmse: 0.3467, mape: 75.8369
+step 2, acc: 0.4962, mae: 0.2735, rmse: 0.3311, mape: 72.5861
+average, acc: 0.4989, mae: 0.2790, rmse: 0.3389, mape: 74.2115
+TopK Precision: 12.7%
+Epoch 4: No TopK improvement for 3 epochs (best: 13.6%)
+epoch 5, lr 0.001000, loss 98.3167, time 121.8 sec
+step 1, acc: 0.4913, mae: 0.2042, rmse: 0.2511, mape: 54.4109
+step 2, acc: 0.4933, mae: 0.1924, rmse: 0.2492, mape: 51.0767
+average, acc: 0.4923, mae: 0.1983, rmse: 0.2502, mape: 52.7438
+TopK Precision: 13.6%
+Epoch 5: No TopK improvement for 4 epochs (best: 13.6%)
+epoch 6, lr 0.001000, loss 98.1290, time 124.0 sec
+step 1, acc: 0.4891, mae: 0.4454, rmse: 0.5274, mape: 118.6799
+step 2, acc: 0.4966, mae: 0.4624, rmse: 0.5374, mape: 122.7212
+average, acc: 0.4928, mae: 0.4539, rmse: 0.5324, mape: 120.7005
+TopK Precision: 14.5%
+Epoch 6: New best TopK Precision: 14.5%, TopK model saved.
+epoch 7, lr 0.001000, loss 97.9880, time 124.5 sec
+step 1, acc: 0.4970, mae: 0.4123, rmse: 0.5154, mape: 109.8680
+step 2, acc: 0.4970, mae: 0.3929, rmse: 0.4842, mape: 104.2691
+average, acc: 0.4970, mae: 0.4026, rmse: 0.4998, mape: 107.0685
+TopK Precision: 13.5%
+Epoch 7: No TopK improvement for 1 epochs (best: 14.5%)
+epoch 8, lr 0.001000, loss 97.7629, time 124.7 sec
+step 1, acc: 0.4953, mae: 0.3787, rmse: 0.4655, mape: 100.9090
+step 2, acc: 0.4970, mae: 0.3119, rmse: 0.3952, mape: 82.7903
+average, acc: 0.4961, mae: 0.3453, rmse: 0.4304, mape: 91.8496
+TopK Precision: 12.6%
+Epoch 8: No TopK improvement for 2 epochs (best: 14.5%)
+epoch 9, lr 0.001000, loss 97.5505, time 124.5 sec
+step 1, acc: 0.5050, mae: 0.3749, rmse: 0.4614, mape: 99.8949
+step 2, acc: 0.4832, mae: 0.3072, rmse: 0.3833, mape: 81.5213
+average, acc: 0.4941, mae: 0.3410, rmse: 0.4223, mape: 90.7081
+TopK Precision: 12.5%
+Epoch 9: No TopK improvement for 3 epochs (best: 14.5%)
+epoch 10, lr 0.001000, loss 97.2326, time 126.4 sec
+step 1, acc: 0.4955, mae: 0.5787, rmse: 0.7415, mape: 154.1853
+step 2, acc: 0.4913, mae: 0.6944, rmse: 0.8640, mape: 184.3054
+average, acc: 0.4934, mae: 0.6365, rmse: 0.8027, mape: 169.2454
+TopK Precision: 11.6%
+Epoch 10: No TopK improvement for 4 epochs (best: 14.5%)
+training end....
+testing begin....
+Total parameters: 890459
+step 1, acc: 0.5026, mae: 0.1237, rmse: 0.1749, mape: 38.8298
+step 2, acc: 0.5061, mae: 0.2604, rmse: 0.3312, mape: 82.4242
+average, acc: 0.5043, mae: 0.1920, rmse: 0.2531, mape: 60.6270
+testing end....
